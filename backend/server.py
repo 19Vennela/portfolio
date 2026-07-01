@@ -11,7 +11,8 @@ from fastapi import FastAPI, APIRouter, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, Field
 from slowapi import Limiter, _rate_limit_exceeded_handler
-from slowapi.util import get_remote_address
+from slowapi.util import get_ipaddr
+from slowapi.middleware import SlowAPIMiddleware
 from slowapi.errors import RateLimitExceeded
 
 load_dotenv()
@@ -26,11 +27,14 @@ CONTACT_RECIPIENT = os.environ["CONTACT_RECIPIENT"]
 resend.api_key = RESEND_API_KEY
 
 # ── App ───────────────────────────────────────────────────
-limiter = Limiter(key_func=get_remote_address)
+# get_ipaddr honours X-Forwarded-For so each real client gets its own bucket
+# behind the Kubernetes ingress.
+limiter = Limiter(key_func=get_ipaddr)
 
 app = FastAPI(title="Vennela Portfolio API", version="1.0.0")
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+app.add_middleware(SlowAPIMiddleware)
 
 app.add_middleware(
     CORSMiddleware,

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" crossorigin href="/assets/index-BLc0vucg.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-DYu5W00K.css">
 </head>
 <body>
 
@@ -616,120 +616,69 @@
 
     <div class="projects-grid">
 
-      <!-- Card 1: Sakhi Suraksha — understated -->
-      <article class="project-card reveal" id="card-sakhi" tabindex="0">
+      <!-- Chapter I: Wholsum Foods -->
+      <a class="project-card reveal" id="card-wholsum" href="/projects/wholsum" data-chapter="wholsum" data-chapter-index="1">
         <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
         <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
         <div class="card-header">
-          <div class="card-icon safety-icon">🛡️</div>
-          <div class="card-tags">
-            <span class="tag">Safety Design</span>
-            <span class="tag">Wearables</span>
-            <span class="tag">IEEE Paper</span>
-          </div>
+          <div class="card-icon wholsum-icon" aria-hidden="true">🌾</div>
+          <p class="card-chapter">Chapter I</p>
         </div>
-        <h3 class="card-title">Sakhi Suraksha</h3>
-        <p class="card-teaser">A mobile and smartwatch concept for women's safety.</p>
-        <p class="card-desc">Designed an interface for an AI &amp; IoT women's safety system. Co-authored an IEEE journal paper detailing our research process and findings.</p>
+        <h3 class="card-title">Wholsum Foods</h3>
+        <p class="card-teaser">Slurrp Farm &amp; Mille — Founder's Office.</p>
         <div class="card-footer">
-          <a href="#" class="card-link" id="sakhiLink">View case study <span class="link-arrow">↗</span></a>
-        </div>
-        <div class="card-hover-bloom" aria-hidden="true">🌸</div>
-      </article>
-
-      <!-- Card 2: The Blend Box -->
-      <article class="project-card reveal" id="card-blend" tabindex="0">
-        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
-        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
-        <div class="card-header">
-          <div class="card-icon blend-icon">🥤</div>
-          <div class="card-tags">
-            <span class="tag">Food &amp; Beverage</span>
-            <span class="tag">Interaction Design</span>
-            <span class="tag">Prototyping</span>
-          </div>
-        </div>
-        <h3 class="card-title">The Blend Box</h3>
-        <p class="card-teaser">A concept smoothie ordering app focused on sensory delight.</p>
-        <p class="card-desc">Designed an app interface that emphasizes visual interaction and smooth prototyping to make the experience feel tactile and playful.</p>
-        <div class="card-video-wrap">
-          <div class="video-placeholder" id="blendVideoPlaceholder">
-            <div class="video-play-btn" id="blendPlayBtn" role="button" tabindex="0" aria-label="Play Blend Box prototype demo">
-              <span class="play-icon">▶</span>
-            </div>
-            <p class="video-label">Prototype Demo</p>
-            <div class="video-shimmer"></div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="card-link" id="blendLink">View prototype <span class="link-arrow">↗</span></a>
-        </div>
-        <div class="card-hover-bloom" aria-hidden="true">🌺</div>
-      </article>
-
-      <!-- Card 3: PromptSense — standard card with embedded demo -->
-      <article class="project-card reveal" id="promptsense-card" tabindex="0">
-        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
-        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
-        <div class="card-header">
-          <div class="card-icon promptsense-icon">✨</div>
-          <div class="card-tags">
-            <span class="tag">AI / Prompt Engineering</span>
-            <span class="tag">Live Demo</span>
-          </div>
-        </div>
-        <h3 class="card-title">PromptSense</h3>
-        <p class="card-teaser">A tool for structuring AI prompts, inspired by patterns I observed during my internship.</p>
-        <p class="card-desc">An AI prompt optimisation tool that guides users in structuring prompts using clear frameworks (Persona + Task + Context + Format) to reduce multi-turn corrections.</p>
-        <!-- Embedded Demo -->
-        <div class="promptsense-embed" id="promptsenseEmbed">
-          <div class="embed-header">
-            <div class="embed-dot red"></div>
-            <div class="embed-dot yellow"></div>
-            <div class="embed-dot green"></div>
-            <span class="embed-title">PromptSense · Live</span>
-            <div class="embed-pulse"></div>
-          </div>
-          <div class="embed-body">
-            <div class="embed-messages" id="embedMessages">
-              <div class="embed-msg bot">
-                <div class="bot-avatar">✨</div>
-                <div class="msg-bubble">Hello! Paste your AI prompt and I'll analyse it across Persona, Task, Context, and Format — the four pillars of effective prompting.</div>
-              </div>
-            </div>
-            <div class="embed-input-row">
-              <textarea class="embed-textarea" id="embedInput" placeholder="Paste your AI prompt here..." rows="2"></textarea>
-              <button class="embed-send" id="embedSend" aria-label="Analyze prompt">
-                <span>Analyze ✦</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="card-link" id="promptsenseLink">Open full demo <span class="link-arrow">↗</span></a>
-        </div>
-        <div class="card-hover-bloom" aria-hidden="true">⭐</div>
-      </article>
-
-      <!-- Card 4: Wholsum Wrapped -->
-      <article class="project-card reveal" id="card-wholsum" tabindex="0">
-        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
-        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
-        <div class="card-header">
-          <div class="card-icon wholsum-icon">🌿</div>
-          <div class="card-tags">
-            <span class="tag">Branding</span>
-            <span class="tag">Visual Design</span>
-          </div>
-        </div>
-        <h3 class="card-title">Wholsum Wrapped</h3>
-        <p class="card-teaser">Brand and campaign design work for Wholsum Foods.</p>
-        <p class="card-desc">Explored visual identity and intentional storytelling to create a unified brand campaign experience.</p>
-        <div class="card-footer">
-          <a href="#" class="card-link" id="wholsumLink">View campaign <span class="link-arrow">↗</span></a>
+          <span class="card-link">Open the chapter <span class="link-arrow">↗</span></span>
         </div>
         <div class="card-hover-bloom" aria-hidden="true">🌾</div>
-      </article>
+      </a>
+
+      <!-- Chapter II: Ericsson -->
+      <a class="project-card reveal" id="card-ericsson" href="/projects/ericsson" data-chapter="ericsson" data-chapter-index="2">
+        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
+        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
+        <div class="card-header">
+          <div class="card-icon ericsson-icon" aria-hidden="true">🧠</div>
+          <p class="card-chapter">Chapter II</p>
+        </div>
+        <h3 class="card-title">Ericsson</h3>
+        <p class="card-teaser">A UX case study inside enterprise GenAI.</p>
+        <div class="card-footer">
+          <span class="card-link">Open the chapter <span class="link-arrow">↗</span></span>
+        </div>
+        <div class="card-hover-bloom" aria-hidden="true">✦</div>
+      </a>
+
+      <!-- Chapter III: PromptSense -->
+      <a class="project-card reveal" id="card-promptsense" href="/projects/promptsense" data-chapter="promptsense" data-chapter-index="3">
+        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
+        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
+        <div class="card-header">
+          <div class="card-icon promptsense-icon" aria-hidden="true">✨</div>
+          <p class="card-chapter">Chapter III</p>
+        </div>
+        <h3 class="card-title">PromptSense</h3>
+        <p class="card-teaser">Structuring the language of AI.</p>
+        <div class="card-footer">
+          <span class="card-link">Open the chapter <span class="link-arrow">↗</span></span>
+        </div>
+        <div class="card-hover-bloom" aria-hidden="true">⭐</div>
+      </a>
+
+      <!-- Chapter IV: Curiosity Cabinet -->
+      <a class="project-card reveal" id="card-cabinet" href="/projects/archive" data-chapter="archive" data-chapter-index="4">
+        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
+        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
+        <div class="card-header">
+          <div class="card-icon cabinet-icon" aria-hidden="true">🗄</div>
+          <p class="card-chapter">Chapter IV</p>
+        </div>
+        <h3 class="card-title">Curiosity Cabinet</h3>
+        <p class="card-teaser">A drawer of everything else — kept alive.</p>
+        <div class="card-footer">
+          <span class="card-link">Open the cabinet <span class="link-arrow">↗</span></span>
+        </div>
+        <div class="card-hover-bloom" aria-hidden="true">🌿</div>
+      </a>
 
     </div>
   </section>
@@ -1177,6 +1126,372 @@
       </p>
       <button class="sn-close" id="snClose" type="button" aria-label="Close the note">✕</button>
     </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CHAPTER VIEW — routes: /projects/:slug
+       Each chapter is a standalone scrollable page.
+       Content is INTENTIONALLY EMPTY. The author populates
+       narratives and media into the marked slots.
+       ═══════════════════════════════════════════════════════ -->
+  <main class="chapter-view" id="chapterView" aria-hidden="true">
+
+    <!-- Shared chapter header (rendered once) -->
+    <header class="chapter-hero" id="chapterHero">
+      <nav class="chapter-topnav" aria-label="Chapter navigation">
+        <a href="/#projects" class="chapter-back" id="chapterBack" data-route>
+          <span class="ch-arrow">←</span>
+          <span>All chapters</span>
+        </a>
+        <div class="chapter-crumb">
+          <span class="crumb-index" id="chapterCrumbIndex"></span>
+          <span class="crumb-dot">·</span>
+          <span class="crumb-name" id="chapterCrumbName"></span>
+        </div>
+      </nav>
+
+      <div class="chapter-title-block">
+        <p class="chapter-eyebrow" id="chapterEyebrow"></p>
+        <h1 class="chapter-title" id="chapterTitle"></h1>
+        <p class="chapter-subtitle" id="chapterSubtitle" data-empty></p>
+      </div>
+    </header>
+
+    <!-- Chapter body — one of these mounts at a time -->
+    <div class="chapter-body" id="chapterBody">
+
+      <!-- ── CHAPTER I · WHOLSUM FOODS ─────────────────────── -->
+      <article class="chapter chapter--wholsum" id="ch-wholsum" data-slug="wholsum" data-title="Wholsum Foods" data-eyebrow="Chapter I · Founder's Office" data-index="1" hidden>
+        <section class="ch-section" data-key="intro" data-label="Introduction">
+          <h2 class="ch-section-title">Introduction</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="intro"></div>
+        </section>
+
+        <section class="ch-section" data-key="mentors" data-label="Mentors">
+          <h2 class="ch-section-title">Mentors</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="mentors"></div>
+        </section>
+
+        <section class="ch-section ch-section--group" data-key="innovation" data-label="Product Innovation">
+          <h2 class="ch-section-title">Product Innovation</h2>
+          <div class="ch-section-body"></div>
+
+          <div class="ch-subsections">
+            <section class="ch-subsection" data-key="milkshake" data-label="Milkshake Mix">
+              <h3 class="ch-sub-title">Milkshake Mix</h3>
+              <div class="ch-section-body"></div>
+              <div class="ch-media-slot" data-slot="milkshake"></div>
+            </section>
+            <section class="ch-subsection" data-key="strawberry-pancake" data-label="Strawberry Pancake">
+              <h3 class="ch-sub-title">Strawberry Pancake</h3>
+              <div class="ch-section-body"></div>
+              <div class="ch-media-slot" data-slot="strawberry-pancake"></div>
+            </section>
+            <section class="ch-subsection" data-key="savoury-pancakes" data-label="Savoury Pancakes">
+              <h3 class="ch-sub-title">Savoury Pancakes</h3>
+              <div class="ch-section-body"></div>
+              <div class="ch-media-slot" data-slot="savoury-pancakes"></div>
+            </section>
+            <section class="ch-subsection" data-key="korean-noodles" data-label="Korean Noodles">
+              <h3 class="ch-sub-title">Korean Noodles</h3>
+              <div class="ch-section-body"></div>
+              <div class="ch-media-slot" data-slot="korean-noodles"></div>
+            </section>
+            <section class="ch-subsection" data-key="cookies" data-label="Cookies">
+              <h3 class="ch-sub-title">Cookies</h3>
+              <div class="ch-section-body"></div>
+              <div class="ch-media-slot" data-slot="cookies"></div>
+            </section>
+            <section class="ch-subsection" data-key="veg-chips" data-label="Veg Chips">
+              <h3 class="ch-sub-title">Veg Chips</h3>
+              <div class="ch-section-body"></div>
+              <div class="ch-media-slot" data-slot="veg-chips"></div>
+            </section>
+            <section class="ch-subsection" data-key="lentil-chips" data-label="Lentil Chips">
+              <h3 class="ch-sub-title">Lentil Chips</h3>
+              <div class="ch-section-body"></div>
+              <div class="ch-media-slot" data-slot="lentil-chips"></div>
+            </section>
+            <section class="ch-subsection" data-key="crackers" data-label="Crackers">
+              <h3 class="ch-sub-title">Crackers</h3>
+              <div class="ch-section-body"></div>
+              <div class="ch-media-slot" data-slot="crackers"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="ch-section" data-key="benchmarking" data-label="Competitive Benchmarking">
+          <h2 class="ch-section-title">Competitive Benchmarking</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="benchmarking"></div>
+        </section>
+
+        <section class="ch-section" data-key="packaging" data-label="Packaging Revamp">
+          <h2 class="ch-section-title">Packaging Revamp</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="packaging"></div>
+        </section>
+
+        <section class="ch-section" data-key="powerbi" data-label="Power BI">
+          <h2 class="ch-section-title">Power BI</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="powerbi"></div>
+        </section>
+
+        <section class="ch-section" data-key="azure" data-label="Azure / Data">
+          <h2 class="ch-section-title">Azure / Data</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="azure"></div>
+        </section>
+
+        <section class="ch-section" data-key="gs1" data-label="GS1">
+          <h2 class="ch-section-title">GS1</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="gs1"></div>
+        </section>
+
+        <section class="ch-section" data-key="warehouse" data-label="Warehouse Visit">
+          <h2 class="ch-section-title">Warehouse Visit</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="warehouse"></div>
+        </section>
+
+        <section class="ch-section" data-key="sops" data-label="SOPs">
+          <h2 class="ch-section-title">SOPs</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="sops"></div>
+        </section>
+
+        <section class="ch-section" data-key="lblf" data-label="LBLF">
+          <h2 class="ch-section-title">LBLF</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="lblf"></div>
+        </section>
+
+        <section class="ch-section" data-key="townhall" data-label="Townhall">
+          <h2 class="ch-section-title">Townhall</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="townhall"></div>
+        </section>
+
+        <section class="ch-section ch-section--feature" data-key="wholsum-wrapped" data-label="Wholsum Wrapped">
+          <h2 class="ch-section-title">Wholsum Wrapped</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-video-slot" data-slot="wholsum-wrapped-video" data-media="video"></div>
+        </section>
+
+        <section class="ch-section ch-section--reflection" data-key="reflection" data-label="Reflection">
+          <h2 class="ch-section-title">Reflection</h2>
+          <div class="ch-section-body"></div>
+        </section>
+      </article>
+
+      <!-- ── CHAPTER II · ERICSSON ─────────────────────────── -->
+      <article class="chapter chapter--ericsson" id="ch-ericsson" data-slug="ericsson" data-title="Ericsson" data-eyebrow="Chapter II · UX Case Study" data-index="2" hidden>
+        <section class="ch-section" data-key="brief" data-label="Project Brief">
+          <h2 class="ch-section-title">Project Brief</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="brief"></div>
+        </section>
+
+        <section class="ch-section" data-key="research-planning" data-label="Research Planning">
+          <h2 class="ch-section-title">Research Planning</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="research-planning"></div>
+        </section>
+
+        <section class="ch-section" data-key="competitive-analysis" data-label="Competitive Analysis">
+          <h2 class="ch-section-title">Competitive Analysis</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="competitive-analysis"></div>
+        </section>
+
+        <section class="ch-section" data-key="user-interviews" data-label="User Interviews">
+          <h2 class="ch-section-title">User Interviews</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="user-interviews"></div>
+        </section>
+
+        <section class="ch-section" data-key="affinity-mapping" data-label="Affinity Mapping">
+          <h2 class="ch-section-title">Affinity Mapping</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="affinity-mapping"></div>
+        </section>
+
+        <section class="ch-section" data-key="ia" data-label="Information Architecture">
+          <h2 class="ch-section-title">Information Architecture</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="ia"></div>
+        </section>
+
+        <section class="ch-section" data-key="crazy-8s" data-label="Crazy 8s">
+          <h2 class="ch-section-title">Crazy 8s</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="crazy-8s"></div>
+        </section>
+
+        <section class="ch-section" data-key="paper-prototypes" data-label="Paper Prototypes">
+          <h2 class="ch-section-title">Paper Prototypes</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="paper-prototypes"></div>
+        </section>
+
+        <section class="ch-section" data-key="high-fidelity" data-label="High Fidelity">
+          <h2 class="ch-section-title">High Fidelity</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="high-fidelity"></div>
+        </section>
+
+        <section class="ch-section" data-key="presentation" data-label="Presentation">
+          <h2 class="ch-section-title">Presentation</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="presentation" data-media="ppt"></div>
+        </section>
+
+        <section class="ch-section" data-key="behind-the-playground" data-label="Behind the Playground">
+          <h2 class="ch-section-title">Behind the Playground</h2>
+          <p class="ch-section-hint">GenAI presentation</p>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="behind-the-playground" data-media="ppt"></div>
+        </section>
+
+        <section class="ch-section ch-section--reflection" data-key="reflection" data-label="Reflection">
+          <h2 class="ch-section-title">Reflection</h2>
+          <div class="ch-section-body"></div>
+        </section>
+      </article>
+
+      <!-- ── CHAPTER III · PROMPTSENSE ─────────────────────── -->
+      <article class="chapter chapter--promptsense" id="ch-promptsense" data-slug="promptsense" data-title="PromptSense" data-eyebrow="Chapter III · AI · Language" data-index="3" hidden>
+        <section class="ch-section" data-key="problem" data-label="Problem">
+          <h2 class="ch-section-title">Problem</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="problem"></div>
+        </section>
+
+        <section class="ch-section" data-key="research" data-label="Research">
+          <h2 class="ch-section-title">Research</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="research"></div>
+        </section>
+
+        <section class="ch-section" data-key="promptify" data-label="Promptify">
+          <h2 class="ch-section-title">Promptify</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="promptify"></div>
+        </section>
+
+        <section class="ch-section" data-key="architecture" data-label="Architecture">
+          <h2 class="ch-section-title">Architecture</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="architecture"></div>
+        </section>
+
+        <section class="ch-section" data-key="ux" data-label="UX">
+          <h2 class="ch-section-title">UX</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="ux"></div>
+        </section>
+
+        <section class="ch-section" data-key="implementation" data-label="Implementation">
+          <h2 class="ch-section-title">Implementation</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="implementation"></div>
+        </section>
+
+        <section class="ch-section" data-key="sustainability" data-label="Sustainability">
+          <h2 class="ch-section-title">Sustainability</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="sustainability"></div>
+        </section>
+
+        <section class="ch-section ch-section--feature" data-key="demo" data-label="Demo">
+          <h2 class="ch-section-title">Demo</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-video-slot" data-slot="demo" data-media="video"></div>
+        </section>
+
+        <section class="ch-section" data-key="report" data-label="Report">
+          <h2 class="ch-section-title">Report</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="report" data-media="pdf"></div>
+        </section>
+
+        <section class="ch-section" data-key="presentation" data-label="Presentation">
+          <h2 class="ch-section-title">Presentation</h2>
+          <div class="ch-section-body"></div>
+          <div class="ch-media-slot" data-slot="presentation" data-media="ppt"></div>
+        </section>
+
+        <section class="ch-section ch-section--reflection" data-key="reflection" data-label="Reflection">
+          <h2 class="ch-section-title">Reflection</h2>
+          <div class="ch-section-body"></div>
+        </section>
+      </article>
+
+      <!-- ── CHAPTER IV · CURIOSITY CABINET ────────────────── -->
+      <article class="chapter chapter--cabinet" id="ch-archive" data-slug="archive" data-title="Curiosity Cabinet" data-eyebrow="Chapter IV · An open drawer" data-index="4" hidden>
+        <section class="ch-cabinet-intro">
+          <div class="ch-section-body"></div>
+        </section>
+
+        <div class="cabinet-filters" role="tablist" aria-label="Filter cabinet by category">
+          <button type="button" class="cab-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="cab-filter" data-filter="branding" role="tab" aria-selected="false">Branding</button>
+          <button type="button" class="cab-filter" data-filter="posters" role="tab" aria-selected="false">Posters</button>
+          <button type="button" class="cab-filter" data-filter="motion" role="tab" aria-selected="false">Motion</button>
+          <button type="button" class="cab-filter" data-filter="illustrations" role="tab" aria-selected="false">Illustrations</button>
+          <button type="button" class="cab-filter" data-filter="presentations" role="tab" aria-selected="false">Presentations</button>
+          <button type="button" class="cab-filter" data-filter="competitions" role="tab" aria-selected="false">Competitions</button>
+          <button type="button" class="cab-filter" data-filter="experiments" role="tab" aria-selected="false">Experiments</button>
+          <button type="button" class="cab-filter" data-filter="misc" role="tab" aria-selected="false">Misc</button>
+        </div>
+
+        <div class="cabinet-grid" id="cabinetGrid" data-empty>
+          <!-- Cabinet items are appended here.
+               Each item: <figure class="cab-item" data-category="posters">
+                            <img data-lightbox src="..." alt="...">
+                            <figcaption>...</figcaption>
+                          </figure>
+          -->
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Shared chapter footer with prev / next -->
+    <footer class="chapter-foot">
+      <a href="/" class="chapter-back-lg" id="chapterBackLg" data-route>
+        <span class="ch-arrow">←</span>
+        Back to all chapters
+      </a>
+      <div class="chapter-nav-nextprev">
+        <a href="#" class="chapter-prev" id="chapterPrev" data-route>
+          <span class="cnp-eyebrow">Previous chapter</span>
+          <span class="cnp-name" id="chapterPrevName"></span>
+        </a>
+        <a href="#" class="chapter-next" id="chapterNext" data-route>
+          <span class="cnp-eyebrow">Next chapter</span>
+          <span class="cnp-name" id="chapterNextName"></span>
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════
+       LIGHTBOX — for images, videos, PDFs, and PPT slides
+       ═══════════════════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Media viewer">
+    <button class="lb-close" id="lbClose" type="button" aria-label="Close viewer">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Previous">‹</button>
+    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Next">›</button>
+    <div class="lb-stage" id="lbStage">
+      <!-- Content injected dynamically -->
+    </div>
+    <p class="lb-caption" id="lbCaption"></p>
+    <p class="lb-counter" id="lbCounter"></p>
   </div>
 
   <script src="script.js"></script>

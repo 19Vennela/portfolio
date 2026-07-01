@@ -3828,3 +3828,364 @@ body.route-chapter .nav-logo {
   .lb-caption { bottom: 24px; }
 }
 
+
+/* =====================================================================
+   ✦ CHAPTER CONTENT COMPONENTS ✦
+   Hero photo · Product chips · Slide gallery · UX studio phases
+   ===================================================================== */
+
+.ch-section-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 500;
+  margin-bottom: 14px;
+  opacity: 0.85;
+}
+.ch-section--intro .ch-section-body {
+  font-size: 1.24rem;
+  color: hsl(150, 22%, 20%);
+  max-width: 760px;
+}
+
+/* Hero photo */
+.ch-hero-photo { margin: 44px 0 0; }
+.ch-hero-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid hsla(38, 30%, 65%, 0.32);
+  box-shadow: 0 24px 60px hsla(150, 40%, 20%, 0.10);
+  cursor: zoom-in;
+  transition: transform 0.6s var(--ease-quiet), box-shadow 0.7s var(--ease-quiet);
+}
+.ch-hero-photo img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 72px hsla(150, 40%, 20%, 0.16);
+}
+.ch-hero-photo figcaption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: hsla(150, 22%, 22%, 0.62);
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Product chip grid */
+.ch-product-grid {
+  margin-top: 40px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.ch-product-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: hsla(48, 55%, 96%, 0.72);
+  border: 1px solid hsla(38, 30%, 65%, 0.32);
+  border-radius: 10px;
+  color: hsl(150, 40%, 14%);
+  font-family: var(--font-serif);
+  transition: background 0.5s var(--ease-quiet), border-color 0.5s var(--ease-quiet), transform 0.5s var(--ease-quiet), box-shadow 0.6s var(--ease-quiet);
+}
+.ch-product-chip:hover {
+  background: hsl(48, 55%, 98%);
+  border-color: var(--gold-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px hsla(150, 40%, 20%, 0.08);
+}
+.ch-product-chip.is-quiet { opacity: 0.72; cursor: default; }
+.ch-product-chip.is-quiet:hover {
+  transform: none; box-shadow: none; border-color: hsla(38, 30%, 65%, 0.32);
+}
+.ch-product-icon { font-size: 1.28rem; filter: saturate(0.9); }
+.ch-product-label { font-size: 1.02rem; letter-spacing: -0.005em; }
+
+/* Deck block */
+.ch-deck-block {
+  margin-top: 40px;
+  padding: 28px;
+  background: linear-gradient(180deg, hsla(48, 55%, 96%, 0.5) 0%, hsla(38, 45%, 92%, 0.3) 100%);
+  border: 1px solid hsla(38, 30%, 65%, 0.22);
+  border-radius: 12px;
+}
+.ch-deck-title {
+  font-family: var(--font-serif);
+  font-size: 1.42rem;
+  font-weight: 500;
+  color: hsl(150, 40%, 14%);
+  margin: 0 0 6px;
+  letter-spacing: -0.008em;
+}
+.ch-deck-hint {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: hsla(150, 22%, 22%, 0.62);
+  font-size: 0.98rem;
+  margin: 0 0 22px;
+}
+
+/* Slide gallery */
+.slide-gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 4px 20px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: hsla(38, 40%, 55%, 0.4) transparent;
+}
+.slide-gallery::-webkit-scrollbar { height: 6px; }
+.slide-gallery::-webkit-scrollbar-track {
+  background: hsla(38, 30%, 65%, 0.12);
+  border-radius: 3px;
+}
+.slide-gallery::-webkit-scrollbar-thumb {
+  background: hsla(38, 40%, 55%, 0.4);
+  border-radius: 3px;
+}
+.slide-gallery::-webkit-scrollbar-thumb:hover {
+  background: hsla(38, 40%, 55%, 0.7);
+}
+.slide-gallery .slide-item {
+  flex: 0 0 auto;
+  width: min(340px, 78vw);
+  aspect-ratio: 16 / 9;
+  scroll-snap-align: start;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid hsla(38, 30%, 65%, 0.35);
+  background: hsl(48, 40%, 96%);
+  cursor: zoom-in;
+  position: relative;
+  transition: transform 0.5s var(--ease-quiet), box-shadow 0.6s var(--ease-quiet), border-color 0.5s var(--ease-quiet);
+}
+.slide-gallery .slide-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-deep);
+  box-shadow: 0 14px 34px hsla(150, 40%, 20%, 0.12);
+}
+.slide-gallery .slide-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.slide-gallery .slide-item .slide-num {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background: hsla(150, 40%, 8%, 0.72);
+  color: hsl(48, 55%, 96%);
+  padding: 3px 9px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  border-radius: 999px;
+}
+
+/* Download button */
+.ch-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 10px 22px;
+  border: 1px solid hsla(38, 30%, 65%, 0.42);
+  border-radius: 999px;
+  color: hsl(150, 40%, 14%);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all 0.5s var(--ease-quiet);
+}
+.ch-download:hover {
+  background: hsla(42, 78%, 62%, 0.10);
+  border-color: var(--gold-deep);
+  color: var(--gold-deep);
+  transform: translateY(-1px);
+}
+.ch-download .ch-arrow { transition: transform 0.5s var(--ease-quiet); }
+.ch-download:hover .ch-arrow { transform: translateY(2px); }
+
+/* Wholsum Wrapped video */
+.ch-video-figure { margin: 0; }
+.ch-video-figure video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  border: 1px solid hsla(38, 30%, 65%, 0.35);
+  background: hsl(150, 30%, 12%);
+  box-shadow: 0 24px 60px hsla(150, 40%, 20%, 0.14);
+}
+.ch-video-figure figcaption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: hsla(150, 22%, 22%, 0.62);
+  font-size: 0.95rem;
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* Reflection */
+.ch-section--reflection .ch-section-body p {
+  font-size: 1.28rem;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   ✦ ERICSSON — UX STUDIO WALKTHROUGH ✦
+   ============================================================ */
+.ux-corkboard {
+  margin-top: 32px;
+  padding: 26px;
+  background:
+    repeating-conic-gradient(
+      hsla(28, 55%, 62%, 0.06) 0deg 4deg,
+      hsla(28, 55%, 55%, 0.10) 4deg 8deg
+    ),
+    linear-gradient(135deg, hsl(28, 45%, 72%) 0%, hsl(24, 42%, 66%) 100%);
+  border-radius: 10px;
+  border: 1px solid hsla(28, 40%, 40%, 0.4);
+  box-shadow:
+    inset 0 0 40px hsla(28, 40%, 30%, 0.24),
+    0 12px 32px hsla(28, 40%, 25%, 0.18);
+  position: relative;
+}
+.ux-corkboard::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 2px dashed hsla(28, 40%, 35%, 0.28);
+  border-radius: 6px;
+  pointer-events: none;
+}
+.ux-corkboard-inner { position: relative; min-height: 200px; }
+.ux-corkboard .ch-media-slot:empty::before {
+  content: 'research pinned here — awaiting artefacts';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: hsla(28, 30%, 20%, 0.55);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.ux-stickies {
+  margin-top: 32px;
+  padding: 32px;
+  background:
+    radial-gradient(circle at 20% 30%, hsla(50, 85%, 88%, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 80% 60%, hsla(50, 85%, 88%, 0.3) 0%, transparent 45%),
+    hsl(150, 15%, 22%);
+  border-radius: 10px;
+  min-height: 200px;
+  color: hsl(48, 55%, 96%);
+}
+.ux-stickies .ch-media-slot:empty::before {
+  content: 'a wall waiting for sticky notes';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: hsla(48, 55%, 96%, 0.55);
+  font-size: 1rem;
+}
+
+.ux-progression {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+.ux-progression-step {
+  padding: 18px;
+  background: hsla(48, 55%, 96%, 0.72);
+  border: 1px solid hsla(38, 30%, 65%, 0.32);
+  border-radius: 10px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s var(--ease-quiet), border-color 0.5s var(--ease-quiet);
+}
+.ux-progression-step:hover {
+  border-color: var(--gold-deep);
+  transform: translateY(-2px);
+}
+.ux-progression-step[data-step="sketch"] {
+  background:
+    repeating-linear-gradient(0deg,
+      hsla(38, 30%, 65%, 0) 0,
+      hsla(38, 30%, 65%, 0) 26px,
+      hsla(38, 30%, 65%, 0.18) 26px,
+      hsla(38, 30%, 65%, 0.18) 27px),
+    hsl(48, 60%, 96%);
+}
+.ux-progression-step[data-step="figma"] {
+  background: linear-gradient(135deg, hsl(220, 15%, 96%) 0%, hsl(220, 12%, 92%) 100%);
+}
+.ux-progression-step .ch-media-slot:empty::before {
+  content: '—';
+  color: hsla(150, 22%, 22%, 0.35);
+  font-family: var(--font-serif);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  font-size: 1.5rem;
+}
+.ux-step-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: hsla(150, 22%, 22%, 0.65);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.ux-progression-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-deep);
+  font-size: 1.4rem;
+  font-family: var(--font-serif);
+  opacity: 0.6;
+}
+
+.ux-phase .ch-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.ux-phase .ch-section-eyebrow::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-deep) 0%, transparent 100%);
+}
+
+@media (max-width: 900px) {
+  .ux-progression { grid-template-columns: 1fr; gap: 12px; }
+  .ux-progression-arrow { transform: rotate(90deg); }
+}
+
+/* Sections with real content no longer look empty */
+.ch-section:has(.ch-section-body:not(:empty)) .ch-section-title { opacity: 1 !important; }
+.ch-section:has(.ch-section-body:not(:empty))::after { display: none !important; }
+

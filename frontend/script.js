@@ -1294,3 +1294,80 @@ console.log('%c✦ Hey curious dev! Built with love, spells, and far too much bo
 
 })();
 
+
+/* ===============================================================
+   ✦ SLIDE GALLERY LOADER ✦
+   Populates .slide-gallery[data-slides="deck"] with slide images.
+   =============================================================== */
+(function() {
+  'use strict';
+
+  // Deck metadata — how many slides each deck has and where they live
+  var DECKS = {
+    'strawberry': { count: 11, base: '/assets/wholsum/slides/strawberry/s-', title: 'Strawberry Pancake Mix' },
+    'savoury':    { count: 9,  base: '/assets/wholsum/slides/savoury/s-',    title: 'Savoury Pancakes' },
+    'milkshake':  { count: 14, base: '/assets/wholsum/slides/milkshake/s-',  title: 'Milkshake Mix — Packaging' }
+  };
+
+  function pad(n) { return n < 10 ? ('0' + n) : String(n); }
+
+  function buildGallery(gallery) {
+    var slug = gallery.getAttribute('data-slides');
+    var deck = DECKS[slug];
+    if (!deck) return;
+    if (gallery.dataset.built) return;
+    var frag = document.createDocumentFragment();
+    for (var i = 1; i <= deck.count; i++) {
+      var url = deck.base + pad(i) + '.jpg';
+      var caption = deck.title + ' — Slide ' + i + ' of ' + deck.count;
+      var wrap = document.createElement('figure');
+      wrap.className = 'slide-item';
+      wrap.setAttribute('data-lightbox', '');
+      wrap.setAttribute('data-lightbox-src', url);
+      wrap.setAttribute('data-lightbox-type', 'image');
+      wrap.setAttribute('data-lightbox-caption', caption);
+      var img = document.createElement('img');
+      img.src = url;
+      img.alt = caption;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      var num = document.createElement('span');
+      num.className = 'slide-num';
+      num.textContent = pad(i) + ' / ' + pad(deck.count);
+      wrap.appendChild(img);
+      wrap.appendChild(num);
+      frag.appendChild(wrap);
+    }
+    gallery.appendChild(frag);
+    gallery.dataset.built = '1';
+  }
+
+  function buildAllGalleries() {
+    document.querySelectorAll('.slide-gallery[data-slides]').forEach(buildGallery);
+  }
+
+  // Build eagerly on first paint
+  if (document.readyState !== 'loading') {
+    buildAllGalleries();
+  } else {
+    document.addEventListener('DOMContentLoaded', buildAllGalleries);
+  }
+  // Also rebuild whenever a chapter mounts (in case the DOM is toggled)
+  window.addEventListener('popstate', function() {
+    setTimeout(buildAllGalleries, 40);
+  });
+
+  // Smooth-scroll for in-chapter anchor links (#w-savoury, etc.)
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href^="#w-"], a[href^="#e-"], a[href^="#p-"]');
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    var target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    var top = target.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  });
+
+})();
+

@@ -94,6 +94,26 @@ I've been stalking you."*
 - **Verified working**: direct deep links, card→chapter navigation, prev/next chapter, back-to-home, filter selection, chapter route hides home sections, home route hides chapters, hash anchors on home still work.
 
 ### Content repositioning
+
+### Wholsum Foods content live (2026-07-01, evening)
+- Full narrative rewritten from user's authored copy — 8 sections:
+  Introduction · Building Products Before They Exist (with 8 product chips) · Turning Research into Decisions (Strawberry) · Looking Beyond the Front of the Pack (Milkshake packaging) · Following the Data Behind Every Decision · Sometimes the Best Way to Solve a Digital Problem is to Leave Your Desk (GS1/Warehouse) · Everything Else That Didn't Fit into One Box (Wholsum Wrapped video) · Reflection.
+- **Assets integrated**: team photo (hero image with lightbox), 3 PPT decks converted to slide galleries (Strawberry 11 slides, Savoury 9 slides, Milkshake Packaging 14 slides), Wholsum Wrapped video (28MB, inline HTML5 video with poster).
+- **Slide gallery component** built: horizontal scroll-snap strip with slide count badges, click → lightbox with prev/next arrows and keyboard nav.
+- **Deck downloads**: each deck section has a "Download deck" pill button linking to the original .pptx.
+- **PPT → slides conversion**: LibreOffice + poppler at 110 DPI JPEG q82 — ~1.1 MB per deck.
+- **Assets served under `/assets/wholsum/`** with subfolders `images/`, `slides/{deck}/`, `video/`, `decks/`.
+
+### Ericsson narrative live — awaiting assets (2026-07-01, evening)
+- User's narrative rewritten into 6 sections + intro + reflection.
+- Creative brief honoured: "walk through a UX studio". Each phase has a distinct visual treatment:
+  - **Research Before Solutions** → cork-board texture with dashed border (research pinned to walls)
+  - **Conversations That Changed the Design** → notebook context for interviews
+  - **Making Sense of Complexity** → dark forest-green wall with sticky-note lighting
+  - **From Ideas to Interfaces** → 3-step progression: paper (ruled background) → wireframes → Figma (crisp light-gray)
+  - **Sharing What I Was Learning** → deck context for GenAI presentation
+- Empty media slots wait for artefacts. Placeholder text within slots ("research pinned here — awaiting artefacts", "a wall waiting for sticky notes") reinforces the studio metaphor without pretending to be content.
+
 ### Testing (2026-07-01, iteration_1)
 - 15/15 frontend acceptance criteria pass.
 - Backend 7/7 after middleware fix. Rate limit verified enforcing (5 → 429).

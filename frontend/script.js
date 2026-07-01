@@ -558,12 +558,14 @@ function dismissGate() {
   sessionStorage.setItem('gateOpened', '1');
 }
 
-// Check if gate was already shown this session
-if (sessionStorage.getItem('gateOpened')) {
+// Check if gate was already shown this session — OR if user deep-linked to a chapter
+var _isChapterRoute = /^\/projects\/[a-z0-9\-]+\/?$/i.test(window.location.pathname);
+if (sessionStorage.getItem('gateOpened') || _isChapterRoute) {
   // Skip gate entirely
   if (gateOverlay) {
     gateOverlay.style.display = 'none';
   }
+  if (_isChapterRoute) sessionStorage.setItem('gateOpened', '1');
 } else {
   // Show gate — lock scroll until dismissed
   document.body.style.overflow = 'hidden';
@@ -983,6 +985,312 @@ console.log('%c✦ Hey curious dev! Built with love, spells, and far too much bo
       mirrorGlass.style.setProperty('--my', my + '%');
     });
   }
+
+})();
+
+
+/* ===============================================================
+   ✦ CHAPTER ROUTER · LIGHTBOX · CABINET FILTER ✦
+   =============================================================== */
+(function() {
+  'use strict';
+
+  var CHAPTER_ORDER = ['wholsum', 'ericsson', 'promptsense', 'archive'];
+  var CHAPTER_NAMES = {
+    'wholsum':     'Wholsum Foods',
+    'ericsson':    'Ericsson',
+    'promptsense': 'PromptSense',
+    'archive':     'Curiosity Cabinet'
+  };
+
+  var chapterView    = document.getElementById('chapterView');
+  var chapterBody    = document.getElementById('chapterBody');
+  var chapterTitle   = document.getElementById('chapterTitle');
+  var chapterEyebrow = document.getElementById('chapterEyebrow');
+  var chapterCrumbIndex = document.getElementById('chapterCrumbIndex');
+  var chapterCrumbName  = document.getElementById('chapterCrumbName');
+  var chapterPrev    = document.getElementById('chapterPrev');
+  var chapterNext    = document.getElementById('chapterNext');
+  var chapterPrevName = document.getElementById('chapterPrevName');
+  var chapterNextName = document.getElementById('chapterNextName');
+
+  function getSlugFromPath() {
+    var m = /^\/projects\/([a-z0-9\-]+)\/?$/i.exec(window.location.pathname);
+    if (m && CHAPTER_ORDER.indexOf(m[1]) !== -1) return m[1];
+    return null;
+  }
+
+  function mountChapter(slug) {
+    // Hide all chapters
+    var all = chapterBody.querySelectorAll('.chapter');
+    all.forEach(function(el) {
+      el.hidden = true;
+      el.removeAttribute('data-mounted');
+    });
+
+    var target = document.getElementById('ch-' + slug);
+    if (!target) return false;
+    target.hidden = false;
+    // trigger animation
+    void target.offsetWidth;
+    target.setAttribute('data-mounted', 'true');
+
+    // header
+    chapterTitle.textContent    = target.getAttribute('data-title') || '';
+    chapterEyebrow.textContent  = target.getAttribute('data-eyebrow') || '';
+    var idx = target.getAttribute('data-index') || '';
+    chapterCrumbIndex.textContent = idx ? ('Chapter ' + toRoman(parseInt(idx, 10))) : '';
+    chapterCrumbName.textContent  = target.getAttribute('data-title') || '';
+
+    // prev / next
+    var pos = CHAPTER_ORDER.indexOf(slug);
+    var prevSlug = pos > 0 ? CHAPTER_ORDER[pos - 1] : null;
+    var nextSlug = pos < CHAPTER_ORDER.length - 1 ? CHAPTER_ORDER[pos + 1] : null;
+
+    if (prevSlug) {
+      chapterPrev.href = '/projects/' + prevSlug;
+      chapterPrev.classList.remove('is-disabled');
+      chapterPrevName.textContent = CHAPTER_NAMES[prevSlug];
+    } else {
+      chapterPrev.href = '#';
+      chapterPrev.classList.add('is-disabled');
+      chapterPrevName.textContent = '';
+    }
+    if (nextSlug) {
+      chapterNext.href = '/projects/' + nextSlug;
+      chapterNext.classList.remove('is-disabled');
+      chapterNextName.textContent = CHAPTER_NAMES[nextSlug];
+    } else {
+      chapterNext.href = '#';
+      chapterNext.classList.add('is-disabled');
+      chapterNextName.textContent = '';
+    }
+
+    // scroll to top
+    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    return true;
+  }
+
+  function toRoman(n) {
+    var map = ['','I','II','III','IV','V','VI','VII','VIII','IX','X'];
+    return map[n] || String(n);
+  }
+
+  function applyRoute() {
+    var slug = getSlugFromPath();
+    if (slug) {
+      document.body.classList.add('route-chapter');
+      chapterView.setAttribute('aria-hidden', 'false');
+      mountChapter(slug);
+      document.title = CHAPTER_NAMES[slug] + ' · Vennela Rudraraju';
+    } else {
+      document.body.classList.remove('route-chapter');
+      chapterView.setAttribute('aria-hidden', 'true');
+      var all = chapterBody.querySelectorAll('.chapter');
+      all.forEach(function(el) { el.hidden = true; });
+      document.title = 'Vennela Rudraraju — Product · Research · Design';
+      // Handle #anchor scrolling on home
+      if (window.location.hash) {
+        var el = document.querySelector(window.location.hash);
+        if (el) setTimeout(function() { el.scrollIntoView({ behavior: 'smooth' }); }, 40);
+      }
+    }
+  }
+
+  function navigate(path) {
+    if (path === window.location.pathname + window.location.search + window.location.hash) return;
+    window.history.pushState({}, '', path);
+    applyRoute();
+  }
+
+  // Intercept clicks on links with data-route or /projects/… hrefs
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (!href) return;
+    // ignore external, target=_blank, ctrl/meta clicks
+    if (a.target === '_blank') return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    if (/^(https?:)?\/\//.test(href) && href.indexOf(window.location.origin) !== 0) return;
+
+    var isChapter = /^\/projects\/[a-z0-9\-]+\/?$/i.test(href);
+    var isHome    = href === '/' || href === '/#projects' || href === '/#' || href === '';
+    var hasData   = a.hasAttribute('data-route') || a.hasAttribute('data-chapter');
+
+    if (isChapter || (hasData && isHome)) {
+      e.preventDefault();
+      // Handle back-to-home with hash
+      if (isHome) {
+        navigate('/');
+        // scroll to #projects
+        setTimeout(function() {
+          var p = document.getElementById('projects');
+          if (p) p.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      } else {
+        navigate(href);
+      }
+    }
+  });
+
+  // Back / forward
+  window.addEventListener('popstate', applyRoute);
+
+  // Initial route apply
+  document.addEventListener('DOMContentLoaded', applyRoute);
+  if (document.readyState !== 'loading') applyRoute();
+
+
+  /* ================================================================
+     LIGHTBOX
+     Any element with [data-lightbox] opens the media in a viewer.
+     ================================================================ */
+  var lb        = document.getElementById('lightbox');
+  var lbStage   = document.getElementById('lbStage');
+  var lbCaption = document.getElementById('lbCaption');
+  var lbCounter = document.getElementById('lbCounter');
+  var lbClose   = document.getElementById('lbClose');
+  var lbPrev    = document.getElementById('lbPrev');
+  var lbNext    = document.getElementById('lbNext');
+  var lbItems   = [];
+  var lbIndex   = -1;
+
+  function detectMediaType(src) {
+    if (!src) return 'image';
+    var s = src.toLowerCase();
+    if (/\.(mp4|webm|mov)(\?|$)/.test(s)) return 'video';
+    if (/\.pdf(\?|$)/.test(s)) return 'pdf';
+    if (/youtube\.com|youtu\.be|vimeo\.com/.test(s)) return 'embed';
+    return 'image';
+  }
+
+  function renderLbItem(item) {
+    lbStage.innerHTML = '';
+    var src = item.src;
+    var type = item.type || detectMediaType(src);
+    var el;
+    if (type === 'image') {
+      el = document.createElement('img');
+      el.src = src;
+      el.alt = item.caption || '';
+    } else if (type === 'video') {
+      el = document.createElement('video');
+      el.src = src;
+      el.controls = true;
+      el.autoplay = true;
+      el.playsInline = true;
+    } else if (type === 'pdf') {
+      el = document.createElement('embed');
+      el.src = src;
+      el.type = 'application/pdf';
+    } else if (type === 'embed') {
+      el = document.createElement('iframe');
+      el.src = src;
+      el.setAttribute('frameborder', '0');
+      el.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
+      el.setAttribute('allowfullscreen', '');
+    }
+    if (el) lbStage.appendChild(el);
+    lbCaption.textContent = item.caption || '';
+    lbCounter.textContent = (lbItems.length > 1) ? ((lbIndex + 1) + ' / ' + lbItems.length) : '';
+    lbPrev.disabled = lbIndex <= 0;
+    lbNext.disabled = lbIndex >= lbItems.length - 1;
+  }
+
+  function collectGroup(triggerEl) {
+    // Group by nearest .ch-media-slot, .cabinet-grid, or parent .ch-section
+    var group = triggerEl.closest('[data-lightbox-group]') ||
+                triggerEl.closest('.ch-media-slot') ||
+                triggerEl.closest('.cabinet-grid') ||
+                triggerEl.closest('.ch-section');
+    if (!group) return [triggerEl];
+    return Array.prototype.slice.call(group.querySelectorAll('[data-lightbox]'));
+  }
+
+  function openLightbox(trigger) {
+    var group = collectGroup(trigger);
+    lbItems = group.map(function(el) {
+      return {
+        src: el.getAttribute('data-lightbox-src') || el.getAttribute('src') || el.getAttribute('href'),
+        type: el.getAttribute('data-lightbox-type'),
+        caption: el.getAttribute('data-lightbox-caption') || el.getAttribute('alt') || ''
+      };
+    });
+    lbIndex = group.indexOf(trigger);
+    if (lbIndex < 0) lbIndex = 0;
+    renderLbItem(lbItems[lbIndex]);
+    lb.classList.add('active');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lb.classList.remove('active');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    // stop any playing media
+    var v = lbStage.querySelector('video');
+    if (v) v.pause();
+    lbStage.innerHTML = '';
+    lbItems = []; lbIndex = -1;
+  }
+
+  function stepLightbox(dir) {
+    var next = lbIndex + dir;
+    if (next < 0 || next >= lbItems.length) return;
+    lbIndex = next;
+    renderLbItem(lbItems[lbIndex]);
+  }
+
+  // Delegate click on [data-lightbox] elements
+  document.addEventListener('click', function(e) {
+    var t = e.target.closest('[data-lightbox]');
+    if (!t) return;
+    e.preventDefault();
+    openLightbox(t);
+  });
+
+  if (lbClose) lbClose.addEventListener('click', closeLightbox);
+  if (lbPrev)  lbPrev.addEventListener('click',  function() { stepLightbox(-1); });
+  if (lbNext)  lbNext.addEventListener('click',  function() { stepLightbox(1); });
+  if (lb) lb.addEventListener('click', function(e) { if (e.target === lb) closeLightbox(); });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lb || !lb.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft')  stepLightbox(-1);
+    if (e.key === 'ArrowRight') stepLightbox(1);
+  });
+
+
+  /* ================================================================
+     CURIOSITY CABINET FILTER
+     ================================================================ */
+  var cabFilters = document.querySelectorAll('.cab-filter');
+  var cabGrid    = document.getElementById('cabinetGrid');
+
+  function applyCabinetFilter(cat) {
+    if (!cabGrid) return;
+    var items = cabGrid.querySelectorAll('.cab-item');
+    items.forEach(function(item) {
+      var itemCat = item.getAttribute('data-category') || 'misc';
+      var visible = (cat === 'all') || (itemCat === cat);
+      item.hidden = !visible;
+    });
+    cabFilters.forEach(function(btn) {
+      var active = btn.getAttribute('data-filter') === cat;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+
+  cabFilters.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = btn.getAttribute('data-filter') || 'all';
+      applyCabinetFilter(cat);
+    });
+  });
 
 })();
 

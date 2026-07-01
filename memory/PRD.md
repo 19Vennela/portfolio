@@ -76,6 +76,24 @@ I've been stalking you."*
 - **Konami code** (`↑↑↓↓←→←→ b a`) reveals a handwritten thank-you note (`#secretNote`) styled like a torn journal page.
 - **Long-press VR monogram** (700ms) triggers a golden bloom.
 
+
+### Chapter architecture (2026-07-01, afternoon)
+- **History API routing** for `/projects/wholsum`, `/projects/ericsson`, `/projects/promptsense`, `/projects/archive`. Vite's SPA fallback serves index.html for all deep links.
+- **4 chapter entry cards** on the home projects grid — clean, no over-explaining, each labelled Chapter I–IV.
+- **Chapter view (`main#chapterView`)** — hides all home sections when a chapter route is active (via `body.route-chapter` class); nav + chapter footer remain.
+- **Chapter navigation** — top: "← All chapters" + Chapter breadcrumb. Bottom: "Back to all chapters" + Previous / Next chapter cards (auto-disabled at endpoints).
+- **Gate bypass** — deep links to `/projects/*` skip the enchanted gate for recruiter-friendly UX; first-time direct visit sets `sessionStorage.gateOpened = 1`.
+- **Chapter I · Wholsum Foods** (empty scaffolds): Introduction, Mentors, Product Innovation (with 8 sub-cards: Milkshake Mix, Strawberry Pancake, Savoury Pancakes, Korean Noodles, Cookies, Veg Chips, Lentil Chips, Crackers), Competitive Benchmarking, Packaging Revamp, Power BI, Azure/Data, GS1, Warehouse Visit, SOPs, LBLF, Townhall, Wholsum Wrapped (video slot), Reflection.
+- **Chapter II · Ericsson**: Project Brief, Research Planning, Competitive Analysis, User Interviews, Affinity Mapping, Information Architecture, Crazy 8s, Paper Prototypes, High Fidelity, Presentation (ppt), Behind the Playground (ppt · GenAI), Reflection.
+- **Chapter III · PromptSense**: Problem, Research, Promptify, Architecture, UX, Implementation, Sustainability, Demo (video slot), Report (pdf), Presentation (ppt), Reflection.
+- **Chapter IV · Curiosity Cabinet**: 9 filter chips (All · Branding · Posters · Motion · Illustrations · Presentations · Competitions · Experiments · Misc), CSS-column masonry grid ready to receive `<figure class="cab-item" data-category="…">` items.
+- **Universal lightbox** — opens any `[data-lightbox]` element. Auto-detects media type (image/video/pdf/embed), keyboard nav (← → Esc), group-aware prev/next within a section.
+- **Empty-state elegance** — sections with no content show the title at 62% opacity + a delicate hairline underneath. No fabricated text, no "lorem ipsum", no placeholder images.
+- **Confidential blur helper** — any element with `class="confidential"` renders with an 18px blur and a "CONFIDENTIAL" watermark, ready for Ericsson artefacts.
+- **Chapter open transition** — subtle 0.9s translate + blur + tilt entry so each chapter feels like a page being turned.
+- **Verified working**: direct deep links, card→chapter navigation, prev/next chapter, back-to-home, filter selection, chapter route hides home sections, home route hides chapters, hash anchors on home still work.
+
+### Content repositioning
 ### Testing (2026-07-01, iteration_1)
 - 15/15 frontend acceptance criteria pass.
 - Backend 7/7 after middleware fix. Rate limit verified enforcing (5 → 429).

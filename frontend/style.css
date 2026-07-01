@@ -4189,3 +4189,142 @@ body.route-chapter .nav-logo {
 .ch-section:has(.ch-section-body:not(:empty)) .ch-section-title { opacity: 1 !important; }
 .ch-section:has(.ch-section-body:not(:empty))::after { display: none !important; }
 
+
+/* =====================================================================
+   ✦ CURIOSITY CABINET — item variants ✦
+   ===================================================================== */
+
+/* Cabinet items now have richer figcaption structure */
+.cab-item figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px 16px;
+}
+.cab-item .cab-cat {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 500;
+  opacity: 0.85;
+}
+.cab-item .cab-title {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-style: normal;
+  color: hsl(150, 40%, 14%);
+  letter-spacing: -0.005em;
+  line-height: 1.25;
+}
+.cab-item .cab-sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: hsla(150, 22%, 22%, 0.55);
+}
+
+/* Video-in-cabinet — hover to auto-play preview */
+.cab-video {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: hsl(150, 30%, 12%);
+}
+.cab-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-quiet);
+}
+.cab-item:hover .cab-video video {
+  transform: scale(1.02);
+}
+.cab-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg,
+    hsla(150, 40%, 8%, 0) 0%,
+    hsla(150, 40%, 8%, 0.35) 100%);
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease-quiet);
+}
+.cab-item.is-playing .cab-video-overlay {
+  opacity: 0;
+}
+.cab-play {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: hsla(48, 55%, 96%, 0.92);
+  color: hsl(150, 40%, 14%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  padding-left: 3px;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.25);
+  transition: transform 0.5s var(--ease-bloom), background 0.5s var(--ease-quiet);
+}
+.cab-item:hover .cab-play {
+  transform: scale(1.08);
+  background: hsl(42, 92%, 88%);
+}
+
+/* QR-code cabinet card — special treatment */
+.cab-item--qr {
+  background: hsl(48, 55%, 97%);
+  border-color: hsla(38, 30%, 55%, 0.4);
+  padding: 20px 20px 0;
+}
+.cab-item--qr:hover {
+  border-color: var(--gold-deep);
+}
+.cab-qr-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+  padding: 16px;
+  cursor: zoom-in;
+}
+.cab-qr-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.7s var(--ease-quiet);
+  image-rendering: crisp-edges;
+}
+.cab-item--qr:hover .cab-qr-link img {
+  transform: scale(1.03);
+}
+.cab-qr-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: hsla(150, 40%, 12%, 0.92);
+  color: hsl(42, 92%, 88%);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.86rem;
+  padding: 6px 16px;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-quiet), transform 0.5s var(--ease-quiet);
+}
+.cab-item--qr:hover .cab-qr-badge {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* Cabinet grid — slight spacing refinement */
+.cabinet-grid { min-height: 300px; }
+

@@ -1371,3 +1371,73 @@ console.log('%c✦ Hey curious dev! Built with love, spells, and far too much bo
 
 })();
 
+
+/* ===============================================================
+   ✦ CURIOSITY CABINET — video hover-play + click-to-lightbox ✦
+   =============================================================== */
+(function() {
+  'use strict';
+
+  function attach() {
+    var videos = document.querySelectorAll('[data-cab-video]');
+    videos.forEach(function(v) {
+      if (v.dataset.attached) return;
+      v.dataset.attached = '1';
+      var card = v.closest('.cab-item');
+      // Hover — silent looping preview
+      v.addEventListener('mouseenter', function() {
+        var p = v.play();
+        if (p && p.then) p.catch(function() {});
+        if (card) card.classList.add('is-playing');
+      });
+      v.parentElement.addEventListener('mouseenter', function() {
+        var p = v.play();
+        if (p && p.then) p.catch(function() {});
+        if (card) card.classList.add('is-playing');
+      });
+      v.parentElement.addEventListener('mouseleave', function() {
+        v.pause();
+        v.currentTime = 0;
+        if (card) card.classList.remove('is-playing');
+      });
+      // Click — open lightbox with full video + sound
+      v.parentElement.addEventListener('click', function(e) {
+        e.preventDefault();
+        var src = v.getAttribute('src');
+        var caption = card ? (card.querySelector('.cab-title')||{}).textContent : '';
+        // dispatch a synthetic click on a lightbox trigger via internal API
+        openCabinetLightbox(src, caption);
+      });
+    });
+  }
+
+  function openCabinetLightbox(src, caption) {
+    var lb = document.getElementById('lightbox');
+    var stage = document.getElementById('lbStage');
+    var cap = document.getElementById('lbCaption');
+    var counter = document.getElementById('lbCounter');
+    var prev = document.getElementById('lbPrev');
+    var next = document.getElementById('lbNext');
+    if (!lb || !stage) return;
+    stage.innerHTML = '';
+    var vid = document.createElement('video');
+    vid.src = src;
+    vid.controls = true;
+    vid.autoplay = true;
+    vid.playsInline = true;
+    stage.appendChild(vid);
+    if (cap) cap.textContent = caption || '';
+    if (counter) counter.textContent = '';
+    if (prev) prev.disabled = true;
+    if (next) next.disabled = true;
+    lb.classList.add('active');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  if (document.readyState !== 'loading') attach();
+  else document.addEventListener('DOMContentLoaded', attach);
+  window.addEventListener('popstate', function() { setTimeout(attach, 60); });
+
+})();
+

@@ -635,3 +635,354 @@ console.log('%c✦ Hey curious dev! Built with love, spells, and far too much bo
     });
   }
 })();
+
+
+/* ===============================================================
+   ✦ ELEVATION LAYER ✦
+   Contact form · Butterfly delivery · Easter eggs · Polish
+   =============================================================== */
+(function() {
+  'use strict';
+
+  function getBackendUrl() {
+    // External preview URL routes /api → backend at same origin
+    if (typeof window !== 'undefined' && window.__BACKEND_URL__) return window.__BACKEND_URL__;
+    if (typeof window !== 'undefined' && window.location && window.location.origin) {
+      return window.location.origin;
+    }
+    return '';
+  }
+
+  // ── Contact form ──
+  var form     = document.getElementById('contactForm');
+  var nameI    = document.getElementById('cfName');
+  var emailI   = document.getElementById('cfEmail');
+  var msgI     = document.getElementById('cfMessage');
+  var hpI      = document.getElementById('cfCompany');
+  var submit   = document.getElementById('cfSubmit');
+  var hint     = document.getElementById('cfHint');
+  var delivery = document.getElementById('butterflyDelivery');
+  var confirmCard  = document.getElementById('bfConfirm');
+  var confirmClose = document.getElementById('bfConfirmClose');
+
+  function setFieldError(field, msg) {
+    if (!field) return;
+    var wrap = field.closest('.field');
+    if (!wrap) return;
+    wrap.classList.toggle('field--error', !!msg);
+    var msgEl = wrap.querySelector('.field-error-msg');
+    if (!msgEl && msg) {
+      msgEl = document.createElement('span');
+      msgEl.className = 'field-error-msg';
+      wrap.appendChild(msgEl);
+    }
+    if (msgEl) msgEl.textContent = msg || '';
+  }
+
+  function validateEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  function runDeliveryAnimation() {
+    if (!delivery) return;
+    delivery.setAttribute('aria-hidden', 'false');
+    delivery.classList.add('active');
+    setTimeout(function() {
+      if (confirmCard) confirmCard.classList.add('show');
+    }, 4400);
+  }
+
+  function closeDelivery() {
+    if (!delivery) return;
+    if (confirmCard) confirmCard.classList.remove('show');
+    delivery.classList.remove('active');
+    delivery.setAttribute('aria-hidden', 'true');
+  }
+
+  if (confirmClose) confirmClose.addEventListener('click', closeDelivery);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeDelivery();
+  });
+
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      if (submit.disabled) return;
+
+      setFieldError(nameI, '');
+      setFieldError(emailI, '');
+      setFieldError(msgI, '');
+
+      var name = (nameI.value || '').trim();
+      var email = (emailI.value || '').trim();
+      var message = (msgI.value || '').trim();
+      var hp = (hpI && hpI.value ? hpI.value : '').trim();
+
+      var valid = true;
+      if (!name) { setFieldError(nameI, 'A name, however informal, helps.'); valid = false; }
+      if (!email || !validateEmail(email)) { setFieldError(emailI, 'I need a way to write back.'); valid = false; }
+      if (!message) { setFieldError(msgI, 'Even a sentence is enough.'); valid = false; }
+      if (!valid) return;
+
+      submit.disabled = true;
+      var labelEl = submit.querySelector('.cfs-text');
+      var originalText = labelEl ? labelEl.textContent : 'Send';
+      if (labelEl) labelEl.textContent = 'Sending…';
+
+      try {
+        var backend = getBackendUrl();
+        var res = await fetch(backend + '/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name, email: email, message: message, company: hp })
+        });
+        if (!res.ok) {
+          var detail = '';
+          try { detail = (await res.json()).detail || ''; } catch (e) {}
+          throw new Error(detail || ('HTTP ' + res.status));
+        }
+        runDeliveryAnimation();
+        setTimeout(function() {
+          form.reset();
+          submit.disabled = false;
+          if (labelEl) labelEl.textContent = originalText;
+        }, 600);
+      } catch (err) {
+        submit.disabled = false;
+        if (labelEl) labelEl.textContent = originalText;
+        if (hint) hint.textContent = 'The butterflies got lost. Try again in a moment.';
+      }
+    });
+
+    [nameI, emailI, msgI].forEach(function(el) {
+      if (!el) return;
+      el.addEventListener('input', function() { setFieldError(el, ''); });
+    });
+  }
+
+  // ── Easter egg 1: Konami code → handwritten note ──
+  var konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  var pos = 0;
+  var secretNote = document.getElementById('secretNote');
+  var snClose = document.getElementById('snClose');
+
+  document.addEventListener('keydown', function(e) {
+    var key = e.key;
+    if (key && key.length === 1) key = key.toLowerCase();
+    if (key === konami[pos]) {
+      pos++;
+      if (pos === konami.length) {
+        pos = 0;
+        if (secretNote) {
+          secretNote.classList.add('active');
+          secretNote.setAttribute('aria-hidden', 'false');
+        }
+      }
+    } else {
+      pos = (key === konami[0]) ? 1 : 0;
+    }
+  });
+
+  function closeSecret() {
+    if (!secretNote) return;
+    secretNote.classList.remove('active');
+    secretNote.setAttribute('aria-hidden', 'true');
+  }
+  if (snClose) snClose.addEventListener('click', closeSecret);
+  if (secretNote) {
+    secretNote.addEventListener('click', function(e) {
+      if (e.target === secretNote) closeSecret();
+    });
+  }
+
+  // ── Easter egg 2: long-press VR monogram → gold bloom ──
+  var navLogo = document.getElementById('navLogo');
+  if (navLogo) {
+    var pressTimer = null;
+    function startPress() {
+      pressTimer = setTimeout(function() {
+        navLogo.classList.remove('vr-bloom');
+        void navLogo.offsetWidth;
+        navLogo.classList.add('vr-bloom');
+        setTimeout(function() { navLogo.classList.remove('vr-bloom'); }, 1500);
+      }, 700);
+    }
+    function endPress() { if (pressTimer) clearTimeout(pressTimer); }
+    navLogo.addEventListener('mousedown', startPress);
+    navLogo.addEventListener('touchstart', startPress, { passive: true });
+    navLogo.addEventListener('mouseup', endPress);
+    navLogo.addEventListener('mouseleave', endPress);
+    navLogo.addEventListener('touchend', endPress);
+  }
+
+  // ── Polish: IntersectionObserver-driven .in-view toggle ──
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('in-view'); });
+  }
+
+})();
+
+/* ===============================================================
+   ✦ CHAPTER II — CRAFTSMANSHIP LAYER (JS) ✦
+   Parallax · Ambient light · Butterfly drift · Card physics
+   =============================================================== */
+(function() {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  // ── Cached elements ──────────────────────────────────────
+  var heroPhoto     = document.getElementById('heroPhoto');
+  var heroBotL      = document.querySelector('.hero-botanical-left');
+  var heroBotR      = document.querySelector('.hero-botanical-right');
+  var heroContent   = document.getElementById('heroContent');
+  var scrollHint    = document.getElementById('scrollHint');
+  var aboutPhoto    = document.getElementById('aboutPhoto');
+  var mirrorGlass   = document.querySelector('.mirror-glass');
+  var body          = document.body;
+  var isMobile      = window.matchMedia('(max-width: 768px)').matches;
+
+  // ── Ambient sunlight shift as visitor scrolls the story ──
+  var lastScroll = -1;
+  var maxScroll = 1;
+  function onScroll() {
+    var y = window.scrollY;
+    if (y === lastScroll) return;
+    lastScroll = y;
+    maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = Math.min(Math.max(y / Math.max(maxScroll, 1), 0), 1);
+
+    // Warm sunlight travels from top (morning) to lower-left (afternoon)
+    var sunY = 8 + (pct * 44);           // 8% → 52%
+    var warmth = 0.10 + (pct * 0.06);    // 0.10 → 0.16
+    body.style.setProperty('--sun-y', sunY + '%');
+    body.style.setProperty('--sun-warmth', warmth.toFixed(3));
+
+    // Hero parallax (only in hero viewport)
+    if (y < window.innerHeight * 1.2) {
+      var heroPct = y / window.innerHeight;
+      if (heroPhoto && !isMobile) {
+        heroPhoto.style.transform = 'translate3d(0,' + (heroPct * 60) + 'px,0) scale(' + (1 + heroPct * 0.06) + ')';
+      }
+      if (heroContent) {
+        heroContent.style.transform = 'translate3d(0,' + (heroPct * 40) + 'px,0)';
+        heroContent.style.opacity = String(Math.max(1 - heroPct * 1.35, 0));
+      }
+      if (heroBotL && !isMobile) heroBotL.style.transform = 'translate3d(' + (heroPct * -30) + 'px, ' + (heroPct * 20) + 'px, 0)';
+      if (heroBotR && !isMobile) heroBotR.style.transform = 'translate3d(' + (heroPct * 30)  + 'px, ' + (heroPct * 20) + 'px, 0)';
+      if (scrollHint) {
+        var hintOpacity = Math.max(1 - heroPct * 3, 0);
+        scrollHint.style.opacity = String(hintOpacity);
+      }
+    }
+
+    // Gentle drift on about photo
+    if (aboutPhoto) {
+      var ap = aboutPhoto.getBoundingClientRect();
+      var mid = window.innerHeight / 2;
+      var d = (ap.top + ap.height / 2 - mid) / mid;   // -1 above, 1 below
+      var t = Math.max(Math.min(d, 1), -1) * -12;
+      if (!isMobile) aboutPhoto.style.transform = 'translate3d(0,' + t + 'px,0)';
+    }
+  }
+
+  // rAF-throttled scroll for buttery smoothness
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        onScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', function() {
+    isMobile = window.matchMedia('(max-width: 768px)').matches;
+    onScroll();
+  }, { passive: true });
+  onScroll();
+
+  // ── Project card: subtle 3D tilt following pointer (desktop only) ──
+  if (window.matchMedia('(pointer:fine)').matches) {
+    var cards = document.querySelectorAll('.project-card');
+    cards.forEach(function(card) {
+      var rect = null;
+      var raf = null;
+
+      function onMove(e) {
+        if (!rect) rect = card.getBoundingClientRect();
+        var mx = e.clientX - rect.left;
+        var my = e.clientY - rect.top;
+        var px = mx / rect.width;
+        var py = my / rect.height;
+        card.style.setProperty('--px', (px * 100) + '%');
+        card.style.setProperty('--py', (py * 100) + '%');
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function() {
+          var tiltX = (0.5 - py) * 4;    // -2deg to +2deg
+          var tiltY = (px - 0.5) * 4;
+          card.style.transform = 'perspective(1200px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg) translateY(-6px)';
+        });
+      }
+
+      function onEnter() {
+        rect = card.getBoundingClientRect();
+      }
+      function onLeave() {
+        rect = null;
+        if (raf) cancelAnimationFrame(raf);
+        card.style.transform = '';
+      }
+
+      card.addEventListener('mouseenter', onEnter);
+      card.addEventListener('mousemove', onMove);
+      card.addEventListener('mouseleave', onLeave);
+    });
+  }
+
+  // ── Butterfly drift — physics-believable easing ──
+  if (window.matchMedia('(pointer:fine)').matches) {
+    var bfs = document.querySelectorAll('.floating-butterfly');
+    var tx = 0, ty = 0, cx = 0, cy = 0;
+    window.addEventListener('mousemove', function(e) {
+      tx = (e.clientX / window.innerWidth - 0.5);
+      ty = (e.clientY / window.innerHeight - 0.5);
+    }, { passive: true });
+    (function tick() {
+      cx += (tx - cx) * 0.03;
+      cy += (ty - cy) * 0.03;
+      bfs.forEach(function(bf, i) {
+        var depth = (i + 1) * 8;
+        bf.style.setProperty('--drift-x', (cx * depth) + 'px');
+        bf.style.setProperty('--drift-y', (cy * depth) + 'px');
+      });
+      requestAnimationFrame(tick);
+    })();
+  }
+
+  // ── Mirror shimmer: gentle pointer-follow highlight ──
+  if (mirrorGlass && window.matchMedia('(pointer:fine)').matches) {
+    var mirrorRect = null;
+    mirrorGlass.addEventListener('mouseenter', function() {
+      mirrorRect = mirrorGlass.getBoundingClientRect();
+    });
+    mirrorGlass.addEventListener('mousemove', function(e) {
+      if (!mirrorRect) mirrorRect = mirrorGlass.getBoundingClientRect();
+      var mx = ((e.clientX - mirrorRect.left) / mirrorRect.width) * 100;
+      var my = ((e.clientY - mirrorRect.top) / mirrorRect.height) * 100;
+      mirrorGlass.style.setProperty('--mx', mx + '%');
+      mirrorGlass.style.setProperty('--my', my + '%');
+    });
+  }
+
+})();
+

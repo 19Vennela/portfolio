@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vennela Rudraraju — UX Designer · Ericsson · UXRIT Founder</title>
-  <meta name="description" content="Vennela Rudraraju is a UX designer and researcher — Ericsson intern, founder of UXRIT (240+ members), and builder of experiences so personal you'll wonder if she's been stalking you." />
+  <title>Vennela Rudraraju — Product · Research · Design</title>
+  <meta name="description" content="Vennela Rudraraju — a computer science graduate who solves messy human and business problems with curiosity, ownership and a love for experiences so personal you'll wonder if she's been stalking you." />
+  <meta name="theme-color" content="#0e1812" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet" />
@@ -580,12 +581,13 @@
       <img src="botanical_overlay.png" alt="" class="hero-botanical-img hero-botanical-img--flip" aria-hidden="true" />
     </div>
     <div class="hero-content" id="heroContent">
-      <p class="hero-eyebrow">UX Designer · Researcher</p>
+      <p class="hero-eyebrow">Product · Research · Design</p>
       <h1 class="hero-headline">
-        Designing so personally,<br/>
-        <em>you'll think I've been<br/>stalking you.</em>
+        <span class="hl-line">I love creating experiences</span>
+        <span class="hl-line">so personal,</span>
+        <em class="hl-line">you'll wonder if I've<br/>been stalking you.</em>
       </h1>
-      <p class="hero-subline">I've worked on enterprise AI and built student UX communities. My goal is simple: I want to make things that feel like they were made exactly for you.</p>
+      <p class="hero-subline">Computer science graduate. I solve messy human and business problems with curiosity, ownership and an unreasonable attention to detail — across product, strategy, research and design.</p>
       <a href="#projects" class="hero-cta" id="heroCta">
         <span class="cta-gate-left">⌘</span>
         Step inside
@@ -985,9 +987,9 @@
         <p class="section-eyebrow">about</p>
         <h2 class="about-title">A little about the one<br/><em>behind the curtain</em></h2>
         <div class="about-body">
-          <p>I'm Vennela — a UX designer and researcher currently studying at MS Ramaiah Institute of Technology. From interning at Ericsson to building a student design community, I've always loved finding ways to connect people.</p>
-          <p>What drives me is the specific feeling of making someone pause and say <em>"how did you know exactly what I needed?"</em> That moment of clarity is why I love design.</p>
-          <p>Whether I'm mapping an enterprise chatbot or prototyping a smoothie app, my goal is to create experiences that feel thoughtful, intuitive, and personal.</p>
+          <p>I'm Vennela — a computer science graduate from MS Ramaiah Institute of Technology. Somewhere between writing my first line of code and running my first usability study, I realised the problems I cared about most were the messy ones — the ones that lived between people and products, strategy and execution, what users want and what businesses can build.</p>
+          <p>I've sat in founders' rooms at Wholsum, designed for 88,000 employees at Ericsson, grown a 240-member community from scratch, and co-authored an IEEE paper along the way. Different rooms, same instinct: <em>get curious, take ownership, find the thread that makes everything click</em>.</p>
+          <p>What I'm chasing is that quiet moment when someone pauses and thinks <em>"how did you know exactly what I needed?"</em> Whether that's through product, research, strategy or design — I don't really mind which chair I sit in.</p>
         </div>
         <div class="about-cta-row">
           <a href="#projects" class="about-cta" id="aboutCta">See my work →</a>
@@ -1004,16 +1006,47 @@
     </div>
     <div class="footer-inner">
       <div class="footer-text-block reveal">
-        <p class="footer-eyebrow">let's make something</p>
+        <p class="footer-eyebrow">leave a note</p>
         <h2 class="footer-title">Let's create something<br/><em>that feels like you.</em></h2>
-        <p class="footer-sub">Whether it's a product, a conversation, or just a thought — I'm one message away.</p>
+        <p class="footer-sub">Whether it's a product, a conversation, or just a thought — slip me a note and the butterflies will carry it across.</p>
       </div>
+
+      <!-- CONTACT FORM -->
+      <form class="contact-form reveal" id="contactForm" novalidate autocomplete="on">
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Your name</span>
+            <input type="text" name="name" id="cfName" required maxlength="120" autocomplete="name" placeholder="Vennela Rudraraju" />
+            <span class="field-underline"></span>
+          </label>
+          <label class="field">
+            <span class="field-label">Where to reach you</span>
+            <input type="email" name="email" id="cfEmail" required maxlength="240" autocomplete="email" placeholder="you@somewhere.lovely" />
+            <span class="field-underline"></span>
+          </label>
+        </div>
+        <label class="field field--message">
+          <span class="field-label">Your note</span>
+          <textarea name="message" id="cfMessage" rows="4" required maxlength="4000" placeholder="Tell me what you're building, or just say hello. I read every one."></textarea>
+          <span class="field-underline"></span>
+        </label>
+        <!-- honeypot -->
+        <input type="text" name="company" id="cfCompany" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true" />
+        <div class="form-foot">
+          <p class="form-hint" id="cfHint">Replies usually within a day or two. Sometimes faster, never longer.</p>
+          <button type="submit" class="form-submit" id="cfSubmit">
+            <span class="cfs-text">Send the butterflies</span>
+            <span class="cfs-arrow">✦</span>
+          </button>
+        </div>
+      </form>
+
       <div class="footer-links reveal">
         <a href="https://linkedin.com/in/vennela-rudraraju" class="footer-link" id="footerLinkedIn" target="_blank" rel="noopener">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        <a href="mailto:vennela@example.com" class="footer-link" id="footerEmail">
+        <a href="mailto:vennela.rudraraju@gmail.com" class="footer-link" id="footerEmail">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
           Email me
         </a>
@@ -1064,6 +1097,87 @@
       <p class="footer-credit">Designed by Vennela Rudraraju, with entirely too much love. ✦</p>
     </div>
   </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       BUTTERFLY DELIVERY OVERLAY — appears after contact form submit
+       ═══════════════════════════════════════════════════════ -->
+  <div id="butterflyDelivery" class="bf-delivery" aria-hidden="true">
+    <div class="bf-vignette"></div>
+    <!-- soft particles -->
+    <div class="bf-particles">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <!-- The butterfly carrying the envelope -->
+    <div class="bf-carrier" id="bfCarrier">
+      <div class="bf-wings">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60" width="120" height="90" aria-hidden="true">
+          <defs>
+            <radialGradient id="wingGlow" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="hsla(42,90%,80%,0.9)"/>
+              <stop offset="100%" stop-color="hsla(345,55%,70%,0.6)"/>
+            </radialGradient>
+          </defs>
+          <g class="bf-wing bf-wing-l">
+            <path d="M40 30 C28 8 6 4 9 22 C11 33 26 32 40 30" fill="url(#wingGlow)" stroke="hsl(345,48%,52%)" stroke-width="0.8"/>
+            <path d="M40 30 C26 36 8 46 12 52 C16 57 30 46 40 32" fill="hsla(345,55%,72%,0.65)" stroke="hsl(345,48%,52%)" stroke-width="0.7"/>
+          </g>
+          <g class="bf-wing bf-wing-r">
+            <path d="M40 30 C52 8 74 4 71 22 C69 33 54 32 40 30" fill="url(#wingGlow)" stroke="hsl(38,58%,50%)" stroke-width="0.8"/>
+            <path d="M40 30 C54 36 72 46 68 52 C64 57 50 46 40 32" fill="hsla(38,65%,76%,0.65)" stroke="hsl(38,58%,50%)" stroke-width="0.7"/>
+          </g>
+          <ellipse cx="40" cy="32" rx="2" ry="9" fill="hsl(150,30%,18%)"/>
+          <path d="M39 22 Q34 14 32 10" fill="none" stroke="hsl(220,15%,22%)" stroke-width="0.9" stroke-linecap="round"/>
+          <path d="M41 22 Q46 14 48 10" fill="none" stroke="hsl(220,15%,22%)" stroke-width="0.9" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <!-- The glowing envelope dangling below -->
+      <div class="bf-envelope" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 40" width="46" height="33">
+          <defs>
+            <linearGradient id="envFace" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="hsl(48,80%,96%)"/>
+              <stop offset="100%" stop-color="hsl(42,55%,86%)"/>
+            </linearGradient>
+            <radialGradient id="envGlow" cx="50%" cy="50%" r="70%">
+              <stop offset="0%" stop-color="hsla(42,95%,82%,0.9)"/>
+              <stop offset="100%" stop-color="hsla(42,95%,82%,0)"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="28" cy="20" rx="34" ry="20" fill="url(#envGlow)"/>
+          <rect x="6" y="8" width="44" height="26" rx="2.5" fill="url(#envFace)" stroke="hsl(38,40%,55%)" stroke-width="0.8"/>
+          <path d="M6 9 L28 24 L50 9" fill="none" stroke="hsl(38,40%,55%)" stroke-width="0.8"/>
+          <circle cx="28" cy="22" r="3" fill="hsl(345,55%,58%)" stroke="hsl(345,38%,40%)" stroke-width="0.5"/>
+          <path d="M27 21.5 L28 23 L30 20.5" fill="none" stroke="hsl(42,90%,90%)" stroke-width="0.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <!-- silken thread between butterfly and envelope -->
+      <div class="bf-thread"></div>
+    </div>
+    <!-- Confirmation card -->
+    <div class="bf-confirm" id="bfConfirm">
+      <p class="bf-confirm-eyebrow">delivered</p>
+      <h3 class="bf-confirm-title">The butterflies have done their job.</h3>
+      <p class="bf-confirm-sub">I'll take it from here.</p>
+      <button class="bf-confirm-close" id="bfConfirmClose" type="button">close</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       EASTER EGG — handwritten thank-you note (Konami code)
+       ═══════════════════════════════════════════════════════ -->
+  <div id="secretNote" class="secret-note" aria-hidden="true">
+    <div class="sn-paper">
+      <p class="sn-handwriting">
+        oh, hello.<br/><br/>
+        if you found this, you're the kind of person<br/>
+        who notices the small things — which is<br/>
+        exactly the kind of person I want to work with.<br/><br/>
+        <span class="sn-sig">— v</span>
+      </p>
+      <button class="sn-close" id="snClose" type="button" aria-label="Close the note">✕</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vennela Rudraraju — Product · Research · Design</title>
+  <meta name="description" content="Vennela Rudraraju — a computer science graduate who solves messy human and business problems with curiosity, ownership and a love for experiences so personal you'll wonder if she's been stalking you." />
+  <meta name="theme-color" content="#0e1812" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" crossorigin href="/assets/index-DyrXEM8k.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ENCHANTED GATE INTRO OVERLAY — one-time per session
+       ═══════════════════════════════════════════════════════ -->
+  <div id="gateOverlay" class="gate-overlay" aria-hidden="true">
+    <!-- Atmospheric Layers -->
+    <div class="enchanted-bg"></div>
+    <div class="enchanted-mist"></div>
+    <div class="fireflies">
+      <div class="firefly"></div><div class="firefly"></div>
+      <div class="firefly"></div><div class="firefly"></div>
+      <div class="firefly"></div><div class="firefly"></div>
+      <div class="firefly"></div><div class="firefly"></div>
+      <div class="firefly"></div><div class="firefly"></div>
+      <div class="firefly"></div><div class="firefly"></div>
+      <div class="firefly"></div><div class="firefly"></div>
+      <div class="firefly"></div>
+    </div>
+    <div class="gap-glow"></div>
+
+    <div class="gate-stage">
+
+      <!-- LEFT GATE PANEL -->
+      <div class="gate gate-left">
+        <svg class="gate-svg" viewBox="0 0 320 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ironGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="hsl(148,18%,10%)"/>
+              <stop offset="40%" stop-color="hsl(148,22%,22%)"/>
+              <stop offset="100%" stop-color="hsl(148,18%,12%)"/>
+            </linearGradient>
+            <linearGradient id="goldFil" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="hsl(42,78%,62%)"/>
+              <stop offset="100%" stop-color="hsl(36,72%,42%)"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- Opaque background removed to allow enchanted forest to show through -->
+
+          <!-- Top arch — double-line ornate -->
+          <path d="M0,130 Q160,8 320,130" fill="none" stroke="hsl(148,22%,13%)" stroke-width="28"/>
+          <path d="M0,130 Q160,8 320,130" fill="none" stroke="hsl(148,28%,20%)" stroke-width="16"/>
+          <path d="M0,130 Q160,16 320,130" fill="none" stroke="hsl(45,55%,32%)" stroke-width="2" opacity="0.7"/>
+          <!-- Arch rivets -->
+          <circle cx="48"  cy="104" r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+          <circle cx="104" cy="72"  r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+          <circle cx="160" cy="58"  r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+          <circle cx="216" cy="72"  r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+          <circle cx="272" cy="104" r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+
+          <!-- Crown medallion -->
+          <circle cx="160" cy="90" r="30" fill="hsl(148,30%,9%)" stroke="hsl(148,34%,22%)" stroke-width="2.5"/>
+          <circle cx="160" cy="90" r="22" fill="none" stroke="url(#goldFil)" stroke-width="1.5"/>
+          <!-- Fleur-de-lis stylised center -->
+          <path d="M160,73 L164,82 L160,90 L156,82 Z" fill="url(#goldFil)" filter="url(#glow)"/>
+          <path d="M160,107 L156,98 L160,90 L164,98 Z" fill="url(#goldFil)"/>
+          <path d="M143,90 L152,86 L160,90 L152,94 Z" fill="url(#goldFil)"/>
+          <path d="M177,90 L168,86 L160,90 L168,94 Z" fill="url(#goldFil)"/>
+          <!-- Small corner diamonds -->
+          <path d="M160,76 L162,79 L160,82 L158,79 Z" fill="hsl(42,88%,74%)"/>
+          <path d="M160,98 L162,101 L160,104 L158,101 Z" fill="hsl(42,88%,74%)"/>
+
+          <!-- 5 vertical bars with tapered lance tips -->
+          <!-- Bar 1 -->
+          <rect x="22" y="84" width="18" height="816" fill="url(#ironGrad)" rx="3"/>
+          <rect x="24" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M31,2 L21,54 L22,86 L40,86 L41,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M31,2 L27,32 L31,52 L35,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="28" y="22" width="6" height="24" rx="3" fill="url(#goldFil)" opacity="0.5"/>
+          <!-- Bar 2 -->
+          <rect x="86" y="84" width="18" height="816" fill="url(#ironGrad)" rx="3"/>
+          <rect x="88" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M95,2 L85,54 L86,86 L104,86 L105,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M95,2 L91,32 L95,52 L99,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="92" y="22" width="6" height="24" rx="3" fill="url(#goldFil)" opacity="0.5"/>
+          <!-- Bar 3 (center) -->
+          <rect x="151" y="84" width="18" height="816" fill="url(#ironGrad)" rx="3"/>
+          <rect x="153" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M160,2 L150,54 L151,86 L169,86 L170,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M160,2 L156,32 L160,52 L164,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="157" y="22" width="6" height="24" rx="3" fill="url(#goldFil)" opacity="0.5"/>
+          <!-- Bar 4 -->
+          <rect x="214" y="84" width="18" height="816" fill="url(#ironGrad)" rx="3"/>
+          <rect x="216" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M223,2 L213,54 L214,86 L232,86 L233,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M223,2 L219,32 L223,52 L227,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="220" y="22" width="6" height="24" rx="3" fill="url(#goldFil)" opacity="0.5"/>
+          <!-- Bar 5 -->
+          <rect x="279" y="84" width="18" height="816" fill="url(#ironGrad)" rx="3"/>
+          <rect x="281" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M288,2 L278,54 L279,86 L297,86 L298,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M288,2 L284,32 L288,52 L292,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="285" y="22" width="6" height="24" rx="3" fill="url(#goldFil)" opacity="0.5"/>
+
+          <!-- Crossbar 1 (y=160) with gold edging -->
+          <rect x="10" y="155" width="300" height="14" fill="hsl(148,22%,13%)" rx="4"/>
+          <rect x="10" y="155" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.6"/>
+          <rect x="10" y="167" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.4"/>
+          <!-- Rosette nodes at bar intersections -->
+          <circle cx="31"  cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="31"  cy="162" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="95"  cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="95"  cy="162" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="160" cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="160" cy="162" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="224" cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="224" cy="162" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="288" cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="288" cy="162" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <!-- Scroll tendrils between bars on crossbar 1 -->
+          <path d="M42,155 Q64,140 85,155" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M106,155 Q128,140 149,155" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M171,155 Q192,140 213,155" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M235,155 Q256,140 277,155" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+
+          <!-- Crossbar 2 (y=420) -->
+          <rect x="10" y="415" width="300" height="14" fill="hsl(148,22%,13%)" rx="4"/>
+          <rect x="10" y="415" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.6"/>
+          <rect x="10" y="427" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.4"/>
+          <circle cx="31"  cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="31"  cy="422" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="95"  cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="95"  cy="422" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="160" cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="160" cy="422" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="224" cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="224" cy="422" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="288" cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="288" cy="422" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <path d="M42,415 Q64,400 85,415" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M106,415 Q128,400 149,415" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M171,415 Q192,400 213,415" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M235,415 Q256,400 277,415" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+
+          <!-- Crossbar 3 (y=655) -->
+          <rect x="10" y="650" width="300" height="14" fill="hsl(148,22%,13%)" rx="4"/>
+          <rect x="10" y="650" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.6"/>
+          <rect x="10" y="662" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.4"/>
+          <circle cx="31"  cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="31"  cy="657" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="95"  cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="95"  cy="657" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="160" cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="160" cy="657" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="224" cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="224" cy="657" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+          <circle cx="288" cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="288" cy="657" r="5"  fill="none" stroke="url(#goldFil)" stroke-width="1"/>
+
+          <!-- Base plate -->
+          <rect x="0" y="878" width="320" height="22" fill="hsl(148,28%,12%)"/>
+          <rect x="0" y="878" width="320" height="2" fill="hsl(42,50%,28%)" opacity="0.5"/>
+
+          <!-- VINE 1 — sinuous left climb -->
+          <path d="M29,900 C10,830 54,770 30,710 C8,650 56,588 34,526 C12,464 58,402 36,342 C14,282 60,222 38,162 C22,116 54,86 44,44"
+                fill="none" stroke="hsl(132,46%,22%)" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- Leaves on vine 1 -->
+          <ellipse cx="58" cy="752" rx="18" ry="8" fill="hsl(134,42%,24%)" transform="rotate(-28,58,752)" opacity="0.88"/>
+          <ellipse cx="8"  cy="614" rx="16" ry="7" fill="hsl(132,38%,23%)" transform="rotate(24,8,614)"   opacity="0.82"/>
+          <ellipse cx="62" cy="434" rx="18" ry="7" fill="hsl(134,42%,24%)" transform="rotate(-22,62,434)" opacity="0.88"/>
+          <ellipse cx="10" cy="282" rx="16" ry="7" fill="hsl(132,38%,23%)" transform="rotate(26,10,282)"  opacity="0.82"/>
+          <!-- Rose (vine 1, y≈742) -->
+          <g transform="translate(50,742)" class="flower-glow red-glow">
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,66%)" opacity="0.95" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,58%,62%)" opacity="0.95" transform="rotate(72)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,66%)" opacity="0.95" transform="rotate(144)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,58%,62%)" opacity="0.95" transform="rotate(216)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,66%)" opacity="0.95" transform="rotate(288)"/>
+            <circle cx="0" cy="0" r="4.5" fill="hsl(42,85%,66%)" filter="url(#glow)"/>
+          </g>
+          <!-- Gold blossom (vine 1, y≈506) -->
+          <g transform="translate(44,506)" class="flower-glow gold-glow">
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,76%,68%)" opacity="0.92" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,70%,64%)" opacity="0.92" transform="rotate(60)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,76%,68%)" opacity="0.92" transform="rotate(120)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,70%,64%)" opacity="0.92" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,76%,68%)" opacity="0.92" transform="rotate(240)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,70%,64%)" opacity="0.92" transform="rotate(300)"/>
+            <circle cx="0" cy="0" r="3.5" fill="hsl(48,90%,72%)"/>
+          </g>
+          <!-- Wildflower violet (vine 1, y≈276) -->
+          <g transform="translate(42,276)" class="flower-glow violet-glow">
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(280,50%,66%)" opacity="0.9" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(272,44%,62%)" opacity="0.9" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(280,50%,66%)" opacity="0.9" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(272,44%,62%)" opacity="0.9" transform="rotate(270)"/>
+            <circle cx="0" cy="0" r="3.5" fill="hsl(48,90%,70%)"/>
+          </g>
+
+          <!-- VINE 2 — right side -->
+          <path d="M291,900 C274,830 312,770 290,710 C270,650 316,588 294,526 C272,464 316,402 294,342 C272,282 316,222 294,162 C278,116 308,86 296,44"
+                fill="none" stroke="hsl(128,42%,21%)" stroke-width="3.5" stroke-linecap="round"/>
+          <ellipse cx="262" cy="754" rx="18" ry="8" fill="hsl(130,40%,23%)" transform="rotate(28,262,754)" opacity="0.88"/>
+          <ellipse cx="312" cy="616" rx="16" ry="7" fill="hsl(132,38%,22%)" transform="rotate(-24,312,616)" opacity="0.82"/>
+          <ellipse cx="258" cy="438" rx="18" ry="7" fill="hsl(130,40%,23%)" transform="rotate(22,258,438)" opacity="0.88"/>
+          <ellipse cx="310" cy="285" rx="16" ry="7" fill="hsl(132,38%,22%)" transform="rotate(-26,310,285)" opacity="0.82"/>
+          <!-- Coral rose (vine 2, y≈692) -->
+          <g transform="translate(270,692)">
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,68%)" opacity="0.94" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,58%,64%)" opacity="0.94" transform="rotate(72)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,68%)" opacity="0.94" transform="rotate(144)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,58%,64%)" opacity="0.94" transform="rotate(216)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,68%)" opacity="0.94" transform="rotate(288)"/>
+            <circle cx="0" cy="0" r="4.5" fill="hsl(42,85%,66%)" filter="url(#glow)"/>
+          </g>
+          <!-- Amber blossom (vine 2, y≈458) -->
+          <g transform="translate(280,458)">
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,72%,68%)" opacity="0.91" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,66%,64%)" opacity="0.91" transform="rotate(60)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,72%,68%)" opacity="0.91" transform="rotate(120)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,66%,64%)" opacity="0.91" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,72%,68%)" opacity="0.91" transform="rotate(240)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,66%,64%)" opacity="0.91" transform="rotate(300)"/>
+            <circle cx="0" cy="0" r="3.5" fill="hsl(48,90%,72%)"/>
+          </g>
+          <!-- Teal flower (vine 2, y≈220) -->
+          <g transform="translate(262,220)">
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(186,46%,63%)" opacity="0.9" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(192,40%,59%)" opacity="0.9" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(186,46%,63%)" opacity="0.9" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(192,40%,59%)" opacity="0.9" transform="rotate(270)"/>
+            <circle cx="0" cy="0" r="3.5" fill="hsl(48,90%,70%)"/>
+          </g>
+
+          <!-- Center seam bar (right inner edge) -->
+          <rect x="308" y="0" width="12" height="900" fill="hsl(148,30%,10%)"/>
+          <!-- Subtle gold seam line -->
+          <rect x="308" y="0" width="1.5" height="900" fill="hsl(42,50%,30%)" opacity="0.5"/>
+
+          <!-- Light bloom ray at base (sunlight spilling through) -->
+          <radialGradient id="sunBloom" cx="50%" cy="110%" r="70%">
+            <stop offset="0%" stop-color="hsl(48,90%,85%)" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+          </radialGradient>
+          <rect width="320" height="900" fill="url(#sunBloom)" pointer-events="none"/>
+        </svg>
+      </div>
+
+      <!-- RIGHT GATE PANEL — CSS mirror of left -->
+      <div class="gate gate-right">
+        <svg class="gate-svg" viewBox="0 0 320 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="ironGrad2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="hsl(148,18%,10%)"/>
+              <stop offset="40%" stop-color="hsl(148,22%,22%)"/>
+              <stop offset="100%" stop-color="hsl(148,18%,12%)"/>
+            </linearGradient>
+            <linearGradient id="goldFil2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="hsl(42,78%,62%)"/>
+              <stop offset="100%" stop-color="hsl(36,72%,42%)"/>
+            </linearGradient>
+            <filter id="glow2">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <path d="M0,130 Q160,8 320,130" fill="none" stroke="hsl(148,22%,13%)" stroke-width="28"/>
+          <path d="M0,130 Q160,8 320,130" fill="none" stroke="hsl(148,28%,20%)" stroke-width="16"/>
+          <path d="M0,130 Q160,16 320,130" fill="none" stroke="hsl(45,55%,32%)" stroke-width="2" opacity="0.7"/>
+          <circle cx="48"  cy="104" r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+          <circle cx="104" cy="72"  r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+          <circle cx="160" cy="58"  r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+          <circle cx="216" cy="72"  r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+          <circle cx="272" cy="104" r="5" fill="hsl(42,60%,35%)" stroke="hsl(42,70%,48%)" stroke-width="1.2"/>
+          <circle cx="160" cy="90" r="30" fill="hsl(148,30%,9%)" stroke="hsl(148,34%,22%)" stroke-width="2.5"/>
+          <circle cx="160" cy="90" r="22" fill="none" stroke="url(#goldFil2)" stroke-width="1.5"/>
+          <path d="M160,73 L164,82 L160,90 L156,82 Z" fill="url(#goldFil2)" filter="url(#glow2)"/>
+          <path d="M160,107 L156,98 L160,90 L164,98 Z" fill="url(#goldFil2)"/>
+          <path d="M143,90 L152,86 L160,90 L152,94 Z" fill="url(#goldFil2)"/>
+          <path d="M177,90 L168,86 L160,90 L168,94 Z" fill="url(#goldFil2)"/>
+          <path d="M160,76 L162,79 L160,82 L158,79 Z" fill="hsl(42,88%,74%)"/>
+          <path d="M160,98 L162,101 L160,104 L158,101 Z" fill="hsl(42,88%,74%)"/>
+          <!-- Bars -->
+          <rect x="22" y="84" width="18" height="816" fill="url(#ironGrad2)" rx="3"/>
+          <rect x="24" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M31,2 L21,54 L22,86 L40,86 L41,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M31,2 L27,32 L31,52 L35,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="28" y="22" width="6" height="24" rx="3" fill="url(#goldFil2)" opacity="0.5"/>
+          <rect x="86" y="84" width="18" height="816" fill="url(#ironGrad2)" rx="3"/>
+          <rect x="88" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M95,2 L85,54 L86,86 L104,86 L105,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M95,2 L91,32 L95,52 L99,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="92" y="22" width="6" height="24" rx="3" fill="url(#goldFil2)" opacity="0.5"/>
+          <rect x="151" y="84" width="18" height="816" fill="url(#ironGrad2)" rx="3"/>
+          <rect x="153" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M160,2 L150,54 L151,86 L169,86 L170,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M160,2 L156,32 L160,52 L164,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="157" y="22" width="6" height="24" rx="3" fill="url(#goldFil2)" opacity="0.5"/>
+          <rect x="214" y="84" width="18" height="816" fill="url(#ironGrad2)" rx="3"/>
+          <rect x="216" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M223,2 L213,54 L214,86 L232,86 L233,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M223,2 L219,32 L223,52 L227,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="220" y="22" width="6" height="24" rx="3" fill="url(#goldFil2)" opacity="0.5"/>
+          <rect x="279" y="84" width="18" height="816" fill="url(#ironGrad2)" rx="3"/>
+          <rect x="281" y="84" width="14" height="816" fill="hsl(148,20%,17%)" rx="2"/>
+          <path d="M288,2 L278,54 L279,86 L297,86 L298,54 Z" fill="hsl(148,22%,15%)"/>
+          <path d="M288,2 L284,32 L288,52 L292,32 Z" fill="hsl(148,18%,26%)"/>
+          <rect x="285" y="22" width="6" height="24" rx="3" fill="url(#goldFil2)" opacity="0.5"/>
+          <!-- Crossbars -->
+          <rect x="10" y="155" width="300" height="14" fill="hsl(148,22%,13%)" rx="4"/>
+          <rect x="10" y="155" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.6"/>
+          <rect x="10" y="167" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.4"/>
+          <circle cx="31"  cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="31"  cy="162" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="95"  cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="95"  cy="162" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="160" cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="160" cy="162" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="224" cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="224" cy="162" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="288" cy="162" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="288" cy="162" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <path d="M42,155 Q64,140 85,155" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M106,155 Q128,140 149,155" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M171,155 Q192,140 213,155" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M235,155 Q256,140 277,155" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <rect x="10" y="415" width="300" height="14" fill="hsl(148,22%,13%)" rx="4"/>
+          <rect x="10" y="415" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.6"/>
+          <rect x="10" y="427" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.4"/>
+          <circle cx="31"  cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="31"  cy="422" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="95"  cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="95"  cy="422" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="160" cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="160" cy="422" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="224" cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="224" cy="422" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="288" cy="422" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="288" cy="422" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <path d="M42,415 Q64,400 85,415" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M106,415 Q128,400 149,415" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M171,415 Q192,400 213,415" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <path d="M235,415 Q256,400 277,415" fill="none" stroke="hsl(148,24%,21%)" stroke-width="2" opacity="0.8"/>
+          <rect x="10" y="650" width="300" height="14" fill="hsl(148,22%,13%)" rx="4"/>
+          <rect x="10" y="650" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.6"/>
+          <rect x="10" y="662" width="300" height="2"  fill="hsl(42,55%,36%)" rx="1" opacity="0.4"/>
+          <circle cx="31"  cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="31"  cy="657" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="95"  cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="95"  cy="657" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="160" cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="160" cy="657" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="224" cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="224" cy="657" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <circle cx="288" cy="657" r="10" fill="hsl(148,28%,11%)" stroke="hsl(148,30%,22%)" stroke-width="2"/>
+          <circle cx="288" cy="657" r="5"  fill="none" stroke="url(#goldFil2)" stroke-width="1"/>
+          <rect x="0" y="878" width="320" height="22" fill="hsl(148,28%,12%)"/>
+          <rect x="0" y="878" width="320" height="2" fill="hsl(42,50%,28%)" opacity="0.5"/>
+          <!-- Vines (right gate) -->
+          <path d="M29,900 C10,830 54,770 30,710 C8,650 56,588 34,526 C12,464 58,402 36,342 C14,282 60,222 38,162 C22,116 54,86 44,44"
+                fill="none" stroke="hsl(132,46%,22%)" stroke-width="3.5" stroke-linecap="round"/>
+          <ellipse cx="58" cy="752" rx="18" ry="8" fill="hsl(134,42%,24%)" transform="rotate(-28,58,752)" opacity="0.88"/>
+          <ellipse cx="8"  cy="614" rx="16" ry="7" fill="hsl(132,38%,23%)" transform="rotate(24,8,614)"   opacity="0.82"/>
+          <ellipse cx="62" cy="434" rx="18" ry="7" fill="hsl(134,42%,24%)" transform="rotate(-22,62,434)" opacity="0.88"/>
+          <ellipse cx="10" cy="282" rx="16" ry="7" fill="hsl(132,38%,23%)" transform="rotate(26,10,282)"  opacity="0.82"/>
+          <g transform="translate(50,742)">
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,66%)" opacity="0.95" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,58%,62%)" opacity="0.95" transform="rotate(72)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,66%)" opacity="0.95" transform="rotate(144)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,58%,62%)" opacity="0.95" transform="rotate(216)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,66%)" opacity="0.95" transform="rotate(288)"/>
+            <circle cx="0" cy="0" r="4.5" fill="hsl(42,85%,66%)" filter="url(#glow2)"/>
+          </g>
+          <g transform="translate(44,506)">
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,76%,68%)" opacity="0.92" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,70%,64%)" opacity="0.92" transform="rotate(60)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,76%,68%)" opacity="0.92" transform="rotate(120)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,70%,64%)" opacity="0.92" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,76%,68%)" opacity="0.92" transform="rotate(240)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,70%,64%)" opacity="0.92" transform="rotate(300)"/>
+            <circle cx="0" cy="0" r="3.5" fill="hsl(48,90%,72%)"/>
+          </g>
+          <g transform="translate(42,276)">
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(280,50%,66%)" opacity="0.9" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(272,44%,62%)" opacity="0.9" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(280,50%,66%)" opacity="0.9" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(272,44%,62%)" opacity="0.9" transform="rotate(270)"/>
+            <circle cx="0" cy="0" r="3.5" fill="hsl(48,90%,70%)"/>
+          </g>
+          <path d="M291,900 C274,830 312,770 290,710 C270,650 316,588 294,526 C272,464 316,402 294,342 C272,282 316,222 294,162 C278,116 308,86 296,44"
+                fill="none" stroke="hsl(128,42%,21%)" stroke-width="3.5" stroke-linecap="round"/>
+          <ellipse cx="262" cy="754" rx="18" ry="8" fill="hsl(130,40%,23%)" transform="rotate(28,262,754)" opacity="0.88"/>
+          <ellipse cx="312" cy="616" rx="16" ry="7" fill="hsl(132,38%,22%)" transform="rotate(-24,312,616)" opacity="0.82"/>
+          <ellipse cx="258" cy="438" rx="18" ry="7" fill="hsl(130,40%,23%)" transform="rotate(22,258,438)" opacity="0.88"/>
+          <ellipse cx="310" cy="285" rx="16" ry="7" fill="hsl(132,38%,22%)" transform="rotate(-26,310,285)" opacity="0.82"/>
+          <g transform="translate(270,692)" class="flower-glow red-glow">
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,68%)" opacity="0.94" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,58%,64%)" opacity="0.94" transform="rotate(72)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,68%)" opacity="0.94" transform="rotate(144)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,58%,64%)" opacity="0.94" transform="rotate(216)"/>
+            <ellipse cx="0" cy="-7" rx="5" ry="7.5" fill="hsl(345,64%,68%)" opacity="0.94" transform="rotate(288)"/>
+            <circle cx="0" cy="0" r="4.5" fill="hsl(42,85%,66%)" filter="url(#glow2)"/>
+          </g>
+          <g transform="translate(280,458)" class="flower-glow gold-glow">
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,72%,68%)" opacity="0.91" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,66%,64%)" opacity="0.91" transform="rotate(60)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,72%,68%)" opacity="0.91" transform="rotate(120)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,66%,64%)" opacity="0.91" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,72%,68%)" opacity="0.91" transform="rotate(240)"/>
+            <ellipse cx="0" cy="-6" rx="4.5" ry="7" fill="hsl(38,66%,64%)" opacity="0.91" transform="rotate(300)"/>
+            <circle cx="0" cy="0" r="3.5" fill="hsl(48,90%,72%)"/>
+          </g>
+          <g transform="translate(262,220)" class="flower-glow teal-glow">
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(186,46%,63%)" opacity="0.9" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(192,40%,59%)" opacity="0.9" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(186,46%,63%)" opacity="0.9" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-6.5" rx="5" ry="7" fill="hsl(192,40%,59%)" opacity="0.9" transform="rotate(270)"/>
+            <circle cx="0" cy="0" r="3.5" fill="hsl(48,90%,70%)"/>
+          </g>
+          <!-- Left seam bar -->
+          <rect x="0" y="0" width="12" height="900" fill="hsl(148,30%,10%)"/>
+          <rect x="10.5" y="0" width="1.5" height="900" fill="hsl(42,50%,30%)" opacity="0.5"/>
+          <radialGradient id="sunBloom2" cx="50%" cy="110%" r="70%">
+            <stop offset="0%" stop-color="hsl(48,90%,85%)" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+          </radialGradient>
+          <rect width="320" height="900" fill="url(#sunBloom2)" pointer-events="none"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Sunlight bloom behind gates (hidden until opening) -->
+    <div class="gate-sun-bloom" id="gateSunBloom" aria-hidden="true"></div>
+
+    <!-- Bloom particle container -->
+    <div id="gateBloom" class="gate-bloom" aria-hidden="true"></div>
+
+    <!-- Enter button -->
+    <button class="gate-enter-btn" id="gateEnterBtn" aria-label="Enter the portfolio">
+      <span>✦ enter ✦</span>
+    </button>
+
+    <!-- Skip link -->
+    <button class="gate-skip-btn" id="gateSkipBtn" aria-label="Skip intro">skip</button>
+  </div>
+
+  <!-- Custom botanical cursor (no trail) -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <svg class="cursor-flower" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+      <g transform="translate(12,12)">
+        <ellipse cx="0" cy="-5.8" rx="2.8" ry="4.8" fill="hsl(345,55%,68%)" transform="rotate(0)"/>
+        <ellipse cx="0" cy="-5.8" rx="2.8" ry="4.8" fill="hsl(345,50%,63%)" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-5.8" rx="2.8" ry="4.8" fill="hsl(345,55%,68%)" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-5.8" rx="2.8" ry="4.8" fill="hsl(345,50%,63%)" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-5.8" rx="2.8" ry="4.8" fill="hsl(345,55%,68%)" transform="rotate(288)"/>
+        <circle cx="0" cy="0" r="2.8" fill="hsl(42,80%,65%)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Scroll progress vine -->
+  <div class="vine-progress" id="vineProgress">
+    <svg class="vine-svg" viewBox="0 0 20 800" preserveAspectRatio="none">
+      <path class="vine-path" id="vinePath" d="M10,0 C15,50 5,100 10,150 C15,200 5,250 10,300 C15,350 5,400 10,450 C15,500 5,550 10,600 C15,650 5,700 10,750 C15,800 5,800 10,800" />
+    </svg>
+    <div class="vine-fill" id="vineFill"></div>
+  </div>
+
+  <!-- Floating SVG butterflies -->
+  <div class="floating-butterfly" id="fb1" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 50" width="34" height="28">
+      <path d="M30 26 C22 9 3 6 6 20 C8 29 20 28 30 26" fill="hsla(345,55%,70%,0.55)" stroke="hsl(345,48%,52%)" stroke-width="0.9"/>
+      <path d="M30 26 C38 9 57 6 54 20 C52 29 40 28 30 26" fill="hsla(38,65%,72%,0.52)" stroke="hsl(38,58%,50%)" stroke-width="0.9"/>
+      <path d="M30 26 C19 31 5 40 9 46 C13 50 24 40 30 28" fill="hsla(345,45%,76%,0.44)" stroke="hsl(345,48%,52%)" stroke-width="0.8"/>
+      <path d="M30 26 C41 31 55 40 51 46 C47 50 36 40 30 28" fill="hsla(38,55%,76%,0.42)" stroke="hsl(38,58%,50%)" stroke-width="0.8"/>
+      <path d="M30 26 C25 15 15 9 10 13" fill="none" stroke="hsl(345,38%,52%)" stroke-width="0.4" opacity="0.5"/>
+      <path d="M30 26 C35 15 45 9 50 13" fill="none" stroke="hsl(38,48%,50%)" stroke-width="0.4" opacity="0.5"/>
+      <ellipse cx="30" cy="28" rx="1.8" ry="8" fill="hsl(150,30%,23%)"/>
+      <path d="M29 21 Q24 13 22 9" fill="none" stroke="hsl(220,15%,28%)" stroke-width="0.9" stroke-linecap="round"/>
+      <path d="M31 21 Q36 13 38 9" fill="none" stroke="hsl(220,15%,28%)" stroke-width="0.9" stroke-linecap="round"/>
+      <circle cx="22" cy="9" r="1.6" fill="hsl(345,55%,56%)"/>
+      <circle cx="38" cy="9" r="1.6" fill="hsl(345,55%,56%)"/>
+    </svg>
+  </div>
+  <div class="floating-butterfly" id="fb2" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 50" width="30" height="25">
+      <path d="M30 26 C22 9 3 6 6 20 C8 29 20 28 30 26" fill="hsla(38,65%,72%,0.52)" stroke="hsl(38,58%,50%)" stroke-width="0.9"/>
+      <path d="M30 26 C38 9 57 6 54 20 C52 29 40 28 30 26" fill="hsla(280,45%,72%,0.48)" stroke="hsl(280,42%,52%)" stroke-width="0.9"/>
+      <path d="M30 26 C19 31 5 40 9 46 C13 50 24 40 30 28" fill="hsla(38,55%,76%,0.42)" stroke="hsl(38,58%,50%)" stroke-width="0.8"/>
+      <path d="M30 26 C41 31 55 40 51 46 C47 50 36 40 30 28" fill="hsla(280,40%,76%,0.4)" stroke="hsl(280,42%,52%)" stroke-width="0.8"/>
+      <ellipse cx="30" cy="28" rx="1.8" ry="8" fill="hsl(150,30%,23%)"/>
+      <path d="M29 21 Q24 13 22 9" fill="none" stroke="hsl(220,15%,28%)" stroke-width="0.9" stroke-linecap="round"/>
+      <path d="M31 21 Q36 13 38 9" fill="none" stroke="hsl(220,15%,28%)" stroke-width="0.9" stroke-linecap="round"/>
+      <circle cx="22" cy="9" r="1.6" fill="hsl(38,65%,55%)"/>
+      <circle cx="38" cy="9" r="1.6" fill="hsl(38,65%,55%)"/>
+    </svg>
+  </div>
+  <div class="floating-butterfly" id="fb3" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 50" width="28" height="23">
+      <path d="M30 26 C22 9 3 6 6 20 C8 29 20 28 30 26" fill="hsla(186,50%,68%,0.50)" stroke="hsl(186,48%,48%)" stroke-width="0.9"/>
+      <path d="M30 26 C38 9 57 6 54 20 C52 29 40 28 30 26" fill="hsla(345,55%,70%,0.52)" stroke="hsl(345,48%,52%)" stroke-width="0.9"/>
+      <path d="M30 26 C19 31 5 40 9 46 C13 50 24 40 30 28" fill="hsla(186,44%,74%,0.42)" stroke="hsl(186,48%,48%)" stroke-width="0.8"/>
+      <path d="M30 26 C41 31 55 40 51 46 C47 50 36 40 30 28" fill="hsla(345,45%,76%,0.42)" stroke="hsl(345,48%,52%)" stroke-width="0.8"/>
+      <ellipse cx="30" cy="28" rx="1.8" ry="8" fill="hsl(150,30%,23%)"/>
+      <path d="M29 21 Q24 13 22 9" fill="none" stroke="hsl(220,15%,28%)" stroke-width="0.9" stroke-linecap="round"/>
+      <path d="M31 21 Q36 13 38 9" fill="none" stroke="hsl(220,15%,28%)" stroke-width="0.9" stroke-linecap="round"/>
+      <circle cx="22" cy="9" r="1.6" fill="hsl(186,55%,52%)"/>
+      <circle cx="38" cy="9" r="1.6" fill="hsl(186,55%,52%)"/>
+    </svg>
+  </div>
+
+  <!-- NAV — Work · About · Contact only -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <!-- VR Monogram logo -->
+      <a href="#hero" class="nav-logo" id="navLogo" aria-label="Vennela Rudraraju — home">
+        <svg class="vr-monogram" viewBox="0 0 64 48" width="58" height="44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- V -->
+          <text x="2" y="40" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600"
+                fill="none" stroke="url(#monoGold)" stroke-width="0.8" letter-spacing="-2">VR</text>
+          <text x="2" y="40" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-weight="600"
+                fill="url(#monoGold)" opacity="0.92" letter-spacing="-2">VR</text>
+          <defs>
+            <linearGradient id="monoGold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"   stop-color="hsl(42,88%,64%)"/>
+              <stop offset="50%"  stop-color="hsl(38,82%,52%)"/>
+              <stop offset="100%" stop-color="hsl(36,78%,44%)"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#projects"   class="nav-link" id="navWork">Work</a></li>
+        <li><a href="#experience" class="nav-link" id="navExperience">Experience</a></li>
+        <li><a href="#about"      class="nav-link" id="navAbout">About</a></li>
+        <li><a href="#contact"    class="nav-link" id="navContact">Contact</a></li>
+      </ul>
+      <!-- Sound toggle -->
+      <button class="sound-toggle" id="soundToggle" aria-label="Toggle ambient sound" aria-pressed="false" title="Sound: off — click to enable">
+        <svg class="sound-note-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="18" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <svg class="sound-mute-slash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <line x1="2" y1="2" x2="22" y2="22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-floral-bg"></div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#projects"   class="mobile-link">Work</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#about"      class="mobile-link">About</a>
+    <a href="#contact"    class="mobile-link">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="/assets/vennela_hero-Bp9c8dmT.jpg" alt="Vennela Rudraraju — UX Designer and Researcher" class="hero-photo" id="heroPhoto" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-botanical-left">
+      <img src="/assets/botanical_overlay-CKihz8Ql.png" alt="" class="hero-botanical-img" aria-hidden="true" />
+    </div>
+    <div class="hero-botanical-right">
+      <img src="/assets/botanical_overlay-CKihz8Ql.png" alt="" class="hero-botanical-img hero-botanical-img--flip" aria-hidden="true" />
+    </div>
+    <div class="hero-content" id="heroContent">
+      <p class="hero-eyebrow">Product · Research · Design</p>
+      <h1 class="hero-headline">
+        <span class="hl-line">I love creating experiences</span>
+        <span class="hl-line">so personal,</span>
+        <em class="hl-line">you'll wonder if I've<br/>been stalking you.</em>
+      </h1>
+      <p class="hero-subline">Computer science graduate. I solve messy human and business problems with curiosity, ownership and an unreasonable attention to detail — across product, strategy, research and design.</p>
+      <a href="#projects" class="hero-cta" id="heroCta">
+        <span class="cta-gate-left">⌘</span>
+        Step inside
+        <span class="cta-arrow">→</span>
+        <span class="cta-gate-right">⌘</span>
+      </a>
+    </div>
+    <div class="hero-scroll-hint" id="scrollHint">
+      <span>scroll to explore</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider" aria-hidden="true">
+    <img src="/assets/botanical_frame-CZK55Lwk.png" alt="" class="divider-botanical" />
+  </div>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">portfolio</p>
+      <h2 class="section-title">Spells Cast ✦</h2>
+      <p class="section-subtitle">Things I conjured — each one made for a very specific kind of magic.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Card 1: Sakhi Suraksha — understated -->
+      <article class="project-card reveal" id="card-sakhi" tabindex="0">
+        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
+        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
+        <div class="card-header">
+          <div class="card-icon safety-icon">🛡️</div>
+          <div class="card-tags">
+            <span class="tag">Safety Design</span>
+            <span class="tag">Wearables</span>
+            <span class="tag">IEEE Paper</span>
+          </div>
+        </div>
+        <h3 class="card-title">Sakhi Suraksha</h3>
+        <p class="card-teaser">A mobile and smartwatch concept for women's safety.</p>
+        <p class="card-desc">Designed an interface for an AI &amp; IoT women's safety system. Co-authored an IEEE journal paper detailing our research process and findings.</p>
+        <div class="card-footer">
+          <a href="#" class="card-link" id="sakhiLink">View case study <span class="link-arrow">↗</span></a>
+        </div>
+        <div class="card-hover-bloom" aria-hidden="true">🌸</div>
+      </article>
+
+      <!-- Card 2: The Blend Box -->
+      <article class="project-card reveal" id="card-blend" tabindex="0">
+        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
+        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
+        <div class="card-header">
+          <div class="card-icon blend-icon">🥤</div>
+          <div class="card-tags">
+            <span class="tag">Food &amp; Beverage</span>
+            <span class="tag">Interaction Design</span>
+            <span class="tag">Prototyping</span>
+          </div>
+        </div>
+        <h3 class="card-title">The Blend Box</h3>
+        <p class="card-teaser">A concept smoothie ordering app focused on sensory delight.</p>
+        <p class="card-desc">Designed an app interface that emphasizes visual interaction and smooth prototyping to make the experience feel tactile and playful.</p>
+        <div class="card-video-wrap">
+          <div class="video-placeholder" id="blendVideoPlaceholder">
+            <div class="video-play-btn" id="blendPlayBtn" role="button" tabindex="0" aria-label="Play Blend Box prototype demo">
+              <span class="play-icon">▶</span>
+            </div>
+            <p class="video-label">Prototype Demo</p>
+            <div class="video-shimmer"></div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link" id="blendLink">View prototype <span class="link-arrow">↗</span></a>
+        </div>
+        <div class="card-hover-bloom" aria-hidden="true">🌺</div>
+      </article>
+
+      <!-- Card 3: PromptSense — standard card with embedded demo -->
+      <article class="project-card reveal" id="promptsense-card" tabindex="0">
+        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
+        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
+        <div class="card-header">
+          <div class="card-icon promptsense-icon">✨</div>
+          <div class="card-tags">
+            <span class="tag">AI / Prompt Engineering</span>
+            <span class="tag">Live Demo</span>
+          </div>
+        </div>
+        <h3 class="card-title">PromptSense</h3>
+        <p class="card-teaser">A tool for structuring AI prompts, inspired by patterns I observed during my internship.</p>
+        <p class="card-desc">An AI prompt optimisation tool that guides users in structuring prompts using clear frameworks (Persona + Task + Context + Format) to reduce multi-turn corrections.</p>
+        <!-- Embedded Demo -->
+        <div class="promptsense-embed" id="promptsenseEmbed">
+          <div class="embed-header">
+            <div class="embed-dot red"></div>
+            <div class="embed-dot yellow"></div>
+            <div class="embed-dot green"></div>
+            <span class="embed-title">PromptSense · Live</span>
+            <div class="embed-pulse"></div>
+          </div>
+          <div class="embed-body">
+            <div class="embed-messages" id="embedMessages">
+              <div class="embed-msg bot">
+                <div class="bot-avatar">✨</div>
+                <div class="msg-bubble">Hello! Paste your AI prompt and I'll analyse it across Persona, Task, Context, and Format — the four pillars of effective prompting.</div>
+              </div>
+            </div>
+            <div class="embed-input-row">
+              <textarea class="embed-textarea" id="embedInput" placeholder="Paste your AI prompt here..." rows="2"></textarea>
+              <button class="embed-send" id="embedSend" aria-label="Analyze prompt">
+                <span>Analyze ✦</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="card-link" id="promptsenseLink">Open full demo <span class="link-arrow">↗</span></a>
+        </div>
+        <div class="card-hover-bloom" aria-hidden="true">⭐</div>
+      </article>
+
+      <!-- Card 4: Wholsum Wrapped -->
+      <article class="project-card reveal" id="card-wholsum" tabindex="0">
+        <div class="card-botanical-corner card-botanical-tl" aria-hidden="true">❧</div>
+        <div class="card-botanical-corner card-botanical-br" aria-hidden="true">❧</div>
+        <div class="card-header">
+          <div class="card-icon wholsum-icon">🌿</div>
+          <div class="card-tags">
+            <span class="tag">Branding</span>
+            <span class="tag">Visual Design</span>
+          </div>
+        </div>
+        <h3 class="card-title">Wholsum Wrapped</h3>
+        <p class="card-teaser">Brand and campaign design work for Wholsum Foods.</p>
+        <p class="card-desc">Explored visual identity and intentional storytelling to create a unified brand campaign experience.</p>
+        <div class="card-footer">
+          <a href="#" class="card-link" id="wholsumLink">View campaign <span class="link-arrow">↗</span></a>
+        </div>
+        <div class="card-hover-bloom" aria-hidden="true">🌾</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MAGIC MIRROR SECTION -->
+  <section class="magic-mirror-section" id="magicMirror">
+    <div class="magic-mirror-inner reveal">
+      <div class="mirror-container">
+        <!-- The Shimmering Glass -->
+        <div class="mirror-glass">
+          <div class="mirror-glass-shimmer"></div>
+          <div class="mirror-content" id="mirrorMsgArea">
+            <div class="mirror-idle-icon">✦</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plaque / Input Area -->
+      <div class="mirror-plaque">
+        <p class="mirror-inscription">"Mirror, mirror, on the wall..."</p>
+        <div class="mirror-input-group">
+          <input type="text" id="mirrorNameInput" class="mirror-input" placeholder="Your name" autocomplete="off" aria-label="Enter your name">
+          <button class="mirror-submit" id="mirrorSubmitBtn" aria-label="Ask the Mirror">Ask</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTANICAL DIVIDER 3 -->
+  <div class="section-divider section-divider--flip" aria-hidden="true">
+    <img src="/assets/botanical_frame-CZK55Lwk.png" alt="" class="divider-botanical" />
+  </div>
+
+  <!-- ═══════════════ EXPERIENCE / CREDENTIALS ═══════════════ -->
+  <section class="experience" id="experience">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">experience &amp; leadership</p>
+      <h2 class="section-title">Where I've Been ✦</h2>
+      <p class="section-subtitle">A look at some of the teams and communities I've had the chance to work with.</p>
+    </div>
+
+    <div class="exp-timeline">
+
+      <!-- Ericsson -->
+      <div class="exp-card reveal" id="exp-ericsson">
+        <div class="exp-logo-col">
+          <div class="exp-icon exp-icon--corp">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="19" fill="hsl(210,72%,28%)" stroke="hsl(210,60%,42%)" stroke-width="1.5"/>
+              <text x="20" y="26" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="white" letter-spacing="0">E</text>
+            </svg>
+          </div>
+          <div class="exp-timeline-line"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-meta">
+            <span class="exp-period">Jul – Sep 2025</span>
+            <span class="exp-badge exp-badge--intern">Internship</span>
+          </div>
+          <h3 class="exp-title">UX Design Intern</h3>
+          <p class="exp-company">Ericsson</p>
+          <ul class="exp-bullets">
+            <li>Led end-to-end UX redesign of an enterprise GenAI chatbot used by <strong>88,000+ employees</strong> globally</li>
+            <li>Conducted <strong>10+ in-depth user interviews</strong> to surface pain points and mental model gaps</li>
+            <li>Proposed <strong>20+ design improvements</strong> — now being implemented org-wide</li>
+            <li>Delivered final designs and documentation directly to the engineering team</li>
+          </ul>
+          <div class="exp-skills">
+            <span class="exp-skill">Enterprise UX</span>
+            <span class="exp-skill">GenAI Chatbot Design</span>
+            <span class="exp-skill">User Research</span>
+            <span class="exp-skill">Figma</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wholsum Foods -->
+      <div class="exp-card reveal" id="exp-wholsum">
+        <div class="exp-logo-col">
+          <div class="exp-icon exp-icon--corp">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="19" fill="hsl(142,48%,24%)" stroke="hsl(142,40%,36%)" stroke-width="1.5"/>
+              <text x="20" y="26" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="white" letter-spacing="0">W</text>
+            </svg>
+          </div>
+          <div class="exp-timeline-line"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-meta">
+            <span class="exp-period">Jan 2026 – Present</span>
+            <span class="exp-badge exp-badge--current">Currently Here</span>
+          </div>
+          <h3 class="exp-title">Chief of Staff Intern · Founder's Office</h3>
+          <p class="exp-company">Wholsum Foods</p>
+          <ul class="exp-bullets">
+            <li>Embedded with the founder, working across product strategy and operational priorities</li>
+            <li>Conducted <strong>UX audits</strong> of the product and customer journey</li>
+            <li>Built <strong>Power BI dashboards</strong> to track key business and UX metrics</li>
+          </ul>
+          <div class="exp-skills">
+            <span class="exp-skill">Product Strategy</span>
+            <span class="exp-skill">UX Audits</span>
+            <span class="exp-skill">Power BI</span>
+            <span class="exp-skill">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- UXRIT -->
+      <div class="exp-card reveal" id="exp-uxrit">
+        <div class="exp-logo-col">
+          <div class="exp-icon exp-icon--lead">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="19" fill="hsl(345,52%,30%)" stroke="hsl(345,48%,46%)" stroke-width="1.5"/>
+              <text x="20" y="26" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="white" letter-spacing="0">UX</text>
+            </svg>
+          </div>
+          <div class="exp-timeline-line"></div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-meta">
+            <span class="exp-period">2024 – Present</span>
+            <span class="exp-badge exp-badge--founder">Founder</span>
+          </div>
+          <h3 class="exp-title">Founder &amp; President</h3>
+          <p class="exp-company">UXRIT — UX Design Club, MS Ramaiah Institute of Technology</p>
+          <ul class="exp-bullets">
+            <li>Founded the UX Club from scratch — grew to <strong>240+ members in 6 months</strong></li>
+            <li>Organised <strong>7 events</strong> with <strong>90+ participants each</strong> and 100% positive feedback</li>
+            <li>Created a community where design thinking is accessible to every student, not just designers</li>
+          </ul>
+          <div class="exp-skills">
+            <span class="exp-skill">Community Building</span>
+            <span class="exp-skill">Event Design</span>
+            <span class="exp-skill">Design Education</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MUNSOC + DECA -->
+      <div class="exp-card reveal" id="exp-other">
+        <div class="exp-logo-col">
+          <div class="exp-icon exp-icon--lead">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="19" fill="hsl(38,62%,30%)" stroke="hsl(38,58%,46%)" stroke-width="1.5"/>
+              <text x="20" y="26" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="white">✦</text>
+            </svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-meta">
+            <span class="exp-period">2022 – Present</span>
+            <span class="exp-badge">Leadership</span>
+          </div>
+          <h3 class="exp-title">MUNSOC &amp; DECA — Leadership Roles</h3>
+          <p class="exp-company">MS Ramaiah Institute of Technology</p>
+          <ul class="exp-bullets">
+            <li>Active leadership and participation in Model United Nations and DECA competitive events</li>
+            <li>Developed negotiation, public speaking, and strategic thinking skills that directly inform UX research and stakeholder work</li>
+          </ul>
+          <div class="exp-skills">
+            <span class="exp-skill">Public Speaking</span>
+            <span class="exp-skill">Negotiation</span>
+            <span class="exp-skill">Strategy</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Skills & Education row -->
+    <div class="exp-bottom-row reveal">
+      <div class="edu-card">
+        <p class="section-eyebrow" style="margin-bottom:10px">Education</p>
+        <h3 class="edu-title">B.E. Computer Science</h3>
+        <p class="edu-school">MS Ramaiah Institute of Technology, Bengaluru</p>
+        <p class="edu-years">2022 – 2026</p>
+      </div>
+      <div class="skills-card">
+        <p class="section-eyebrow" style="margin-bottom:14px">Skills</p>
+        <div class="skills-clusters">
+          <div class="skills-cluster">
+            <p class="skills-cluster-label">UX Methods</p>
+            <div class="skills-tags">
+              <span class="skill-tag">User Research</span>
+              <span class="skill-tag">Usability Testing</span>
+              <span class="skill-tag">Journey Mapping</span>
+              <span class="skill-tag">Affinity Mapping</span>
+              <span class="skill-tag">Wireframing</span>
+              <span class="skill-tag">Prototyping</span>
+              <span class="skill-tag">Design Systems</span>
+            </div>
+          </div>
+          <div class="skills-cluster">
+            <p class="skills-cluster-label">Design Tools</p>
+            <div class="skills-tags">
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">FigJam</span>
+              <span class="skill-tag">Framer</span>
+              <span class="skill-tag">Power BI</span>
+            </div>
+          </div>
+          <div class="skills-cluster">
+            <p class="skills-cluster-label">Technical</p>
+            <div class="skills-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">HTML / CSS / JS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTANICAL DIVIDER 3 -->
+  <div class="section-divider" aria-hidden="true">
+    <img src="/assets/botanical_frame-CZK55Lwk.png" alt="" class="divider-botanical" />
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-photo-col reveal">
+        <div class="about-photo-frame">
+          <img src="/assets/vennela_about-CosQ6xRK.jpg" alt="Vennela Rudraraju in a blue floral dress in a garden" class="about-photo" id="aboutPhoto" onerror="this.src='vennela_hero.jpg'" />
+          <div class="about-photo-border"></div>
+          <div class="about-photo-botanical" aria-hidden="true">
+            <img src="/assets/botanical_frame-CZK55Lwk.png" alt="" class="about-botanical-img" />
+          </div>
+        </div>
+        <div class="about-specimen-icons">
+          <div class="specimen" id="spec1">
+            <div class="specimen-icon">🔬</div>
+            <div class="specimen-label">Research</div>
+          </div>
+          <div class="specimen" id="spec2">
+            <div class="specimen-icon">⚡</div>
+            <div class="specimen-label">Prototyping</div>
+          </div>
+          <div class="specimen" id="spec3">
+            <div class="specimen-icon">◆</div>
+            <div class="specimen-label">Figma</div>
+          </div>
+          <div class="specimen" id="spec4">
+            <div class="specimen-icon">⌚</div>
+            <div class="specimen-label">Wearables</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text-col reveal">
+        <p class="section-eyebrow">about</p>
+        <h2 class="about-title">A little about the one<br/><em>behind the curtain</em></h2>
+        <div class="about-body">
+          <p>I'm Vennela — a computer science graduate from MS Ramaiah Institute of Technology. Somewhere between writing my first line of code and running my first usability study, I realised the problems I cared about most were the messy ones — the ones that lived between people and products, strategy and execution, what users want and what businesses can build.</p>
+          <p>I've sat in founders' rooms at Wholsum, designed for 88,000 employees at Ericsson, grown a 240-member community from scratch, and co-authored an IEEE paper along the way. Different rooms, same instinct: <em>get curious, take ownership, find the thread that makes everything click</em>.</p>
+          <p>What I'm chasing is that quiet moment when someone pauses and thinks <em>"how did you know exactly what I needed?"</em> Whether that's through product, research, strategy or design — I don't really mind which chair I sit in.</p>
+        </div>
+        <div class="about-cta-row">
+          <a href="#projects" class="about-cta" id="aboutCta">See my work →</a>
+          <a href="#contact" class="about-link" id="aboutContact">Let's talk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-botanical" aria-hidden="true">
+      <img src="/assets/botanical_overlay-CKihz8Ql.png" alt="" />
+    </div>
+    <div class="footer-inner">
+      <div class="footer-text-block reveal">
+        <p class="footer-eyebrow">leave a note</p>
+        <h2 class="footer-title">Let's create something<br/><em>that feels like you.</em></h2>
+        <p class="footer-sub">Whether it's a product, a conversation, or just a thought — slip me a note and the butterflies will carry it across.</p>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <form class="contact-form reveal" id="contactForm" novalidate autocomplete="on">
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Your name</span>
+            <input type="text" name="name" id="cfName" required maxlength="120" autocomplete="name" placeholder="Vennela Rudraraju" />
+            <span class="field-underline"></span>
+          </label>
+          <label class="field">
+            <span class="field-label">Where to reach you</span>
+            <input type="email" name="email" id="cfEmail" required maxlength="240" autocomplete="email" placeholder="you@somewhere.lovely" />
+            <span class="field-underline"></span>
+          </label>
+        </div>
+        <label class="field field--message">
+          <span class="field-label">Your note</span>
+          <textarea name="message" id="cfMessage" rows="4" required maxlength="4000" placeholder="Tell me what you're building, or just say hello. I read every one."></textarea>
+          <span class="field-underline"></span>
+        </label>
+        <!-- honeypot -->
+        <input type="text" name="company" id="cfCompany" tabindex="-1" autocomplete="off" class="hp-field" aria-hidden="true" />
+        <div class="form-foot">
+          <p class="form-hint" id="cfHint">Replies usually within a day or two. Sometimes faster, never longer.</p>
+          <button type="submit" class="form-submit" id="cfSubmit">
+            <span class="cfs-text">Send the butterflies</span>
+            <span class="cfs-arrow">✦</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="footer-links reveal">
+        <a href="https://linkedin.com/in/vennela-rudraraju" class="footer-link" id="footerLinkedIn" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:vennela.rudraraju@gmail.com" class="footer-link" id="footerEmail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          Email me
+        </a>
+        <a href="#" class="footer-link footer-link--resume" id="footerResume">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11zm-8-7H8v-2h2v2zm6 0h-4v-2h4v2zm0 3H8v-2h8v2z"/></svg>
+          Download Resume
+        </a>
+      </div>
+      <!-- SVG butterfly decorations in footer -->
+      <div class="footer-butterflies" aria-hidden="true">
+        <span class="footer-butterfly" style="--delay:0s; --x: 10%; --y: 30%">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 50" width="20" height="17">
+            <path d="M30 26 C22 9 3 6 6 20 C8 29 20 28 30 26" fill="hsla(345,55%,70%,0.5)" stroke="hsl(345,48%,52%)" stroke-width="0.9"/>
+            <path d="M30 26 C38 9 57 6 54 20 C52 29 40 28 30 26" fill="hsla(38,65%,72%,0.48)" stroke="hsl(38,58%,50%)" stroke-width="0.9"/>
+            <path d="M30 26 C19 31 5 40 9 46 C13 50 24 40 30 28" fill="hsla(345,45%,76%,0.4)" stroke="hsl(345,48%,52%)" stroke-width="0.8"/>
+            <path d="M30 26 C41 31 55 40 51 46 C47 50 36 40 30 28" fill="hsla(38,55%,76%,0.38)" stroke="hsl(38,58%,50%)" stroke-width="0.8"/>
+            <ellipse cx="30" cy="28" rx="1.8" ry="8" fill="hsl(150,30%,60%)"/>
+          </svg>
+        </span>
+        <span class="footer-butterfly" style="--delay:0.8s; --x: 80%; --y: 60%">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 50" width="18" height="15">
+            <path d="M30 26 C22 9 3 6 6 20 C8 29 20 28 30 26" fill="hsla(38,65%,72%,0.48)" stroke="hsl(38,58%,50%)" stroke-width="0.9"/>
+            <path d="M30 26 C38 9 57 6 54 20 C52 29 40 28 30 26" fill="hsla(186,50%,68%,0.45)" stroke="hsl(186,48%,48%)" stroke-width="0.9"/>
+            <path d="M30 26 C19 31 5 40 9 46 C13 50 24 40 30 28" fill="hsla(38,55%,76%,0.38)" stroke="hsl(38,58%,50%)" stroke-width="0.8"/>
+            <path d="M30 26 C41 31 55 40 51 46 C47 50 36 40 30 28" fill="hsla(186,44%,74%,0.36)" stroke="hsl(186,48%,48%)" stroke-width="0.8"/>
+            <ellipse cx="30" cy="28" rx="1.8" ry="8" fill="hsl(150,30%,60%)"/>
+          </svg>
+        </span>
+        <span class="footer-butterfly" style="--delay:1.5s; --x: 45%; --y: 20%">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 50" width="22" height="18">
+            <path d="M30 26 C22 9 3 6 6 20 C8 29 20 28 30 26" fill="hsla(280,45%,70%,0.45)" stroke="hsl(280,42%,52%)" stroke-width="0.9"/>
+            <path d="M30 26 C38 9 57 6 54 20 C52 29 40 28 30 26" fill="hsla(345,55%,70%,0.48)" stroke="hsl(345,48%,52%)" stroke-width="0.9"/>
+            <path d="M30 26 C19 31 5 40 9 46 C13 50 24 40 30 28" fill="hsla(280,40%,75%,0.38)" stroke="hsl(280,42%,52%)" stroke-width="0.8"/>
+            <path d="M30 26 C41 31 55 40 51 46 C47 50 36 40 30 28" fill="hsla(345,45%,76%,0.4)" stroke="hsl(345,48%,52%)" stroke-width="0.8"/>
+            <ellipse cx="30" cy="28" rx="1.8" ry="8" fill="hsl(150,30%,60%)"/>
+          </svg>
+        </span>
+        <span class="footer-butterfly" style="--delay:2.2s; --x: 65%; --y: 80%">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 50" width="16" height="13">
+            <path d="M30 26 C22 9 3 6 6 20 C8 29 20 28 30 26" fill="hsla(38,65%,72%,0.48)" stroke="hsl(38,58%,50%)" stroke-width="0.9"/>
+            <path d="M30 26 C38 9 57 6 54 20 C52 29 40 28 30 26" fill="hsla(345,55%,70%,0.5)" stroke="hsl(345,48%,52%)" stroke-width="0.9"/>
+            <path d="M30 26 C19 31 5 40 9 46 C13 50 24 40 30 28" fill="hsla(38,55%,76%,0.38)" stroke="hsl(38,58%,50%)" stroke-width="0.8"/>
+            <path d="M30 26 C41 31 55 40 51 46 C47 50 36 40 30 28" fill="hsla(345,45%,76%,0.4)" stroke="hsl(345,48%,52%)" stroke-width="0.8"/>
+            <ellipse cx="30" cy="28" rx="1.8" ry="8" fill="hsl(150,30%,60%)"/>
+          </svg>
+        </span>
+      </div>
+      <p class="footer-credit">Designed by Vennela Rudraraju, with entirely too much love. ✦</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════
+       BUTTERFLY DELIVERY OVERLAY — appears after contact form submit
+       ═══════════════════════════════════════════════════════ -->
+  <div id="butterflyDelivery" class="bf-delivery" aria-hidden="true">
+    <div class="bf-vignette"></div>
+    <!-- soft particles -->
+    <div class="bf-particles">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <!-- The butterfly carrying the envelope -->
+    <div class="bf-carrier" id="bfCarrier">
+      <div class="bf-wings">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60" width="120" height="90" aria-hidden="true">
+          <defs>
+            <radialGradient id="wingGlow" cx="50%" cy="50%" r="60%">
+              <stop offset="0%" stop-color="hsla(42,90%,80%,0.9)"/>
+              <stop offset="100%" stop-color="hsla(345,55%,70%,0.6)"/>
+            </radialGradient>
+          </defs>
+          <g class="bf-wing bf-wing-l">
+            <path d="M40 30 C28 8 6 4 9 22 C11 33 26 32 40 30" fill="url(#wingGlow)" stroke="hsl(345,48%,52%)" stroke-width="0.8"/>
+            <path d="M40 30 C26 36 8 46 12 52 C16 57 30 46 40 32" fill="hsla(345,55%,72%,0.65)" stroke="hsl(345,48%,52%)" stroke-width="0.7"/>
+          </g>
+          <g class="bf-wing bf-wing-r">
+            <path d="M40 30 C52 8 74 4 71 22 C69 33 54 32 40 30" fill="url(#wingGlow)" stroke="hsl(38,58%,50%)" stroke-width="0.8"/>
+            <path d="M40 30 C54 36 72 46 68 52 C64 57 50 46 40 32" fill="hsla(38,65%,76%,0.65)" stroke="hsl(38,58%,50%)" stroke-width="0.7"/>
+          </g>
+          <ellipse cx="40" cy="32" rx="2" ry="9" fill="hsl(150,30%,18%)"/>
+          <path d="M39 22 Q34 14 32 10" fill="none" stroke="hsl(220,15%,22%)" stroke-width="0.9" stroke-linecap="round"/>
+          <path d="M41 22 Q46 14 48 10" fill="none" stroke="hsl(220,15%,22%)" stroke-width="0.9" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <!-- The glowing envelope dangling below -->
+      <div class="bf-envelope" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 40" width="46" height="33">
+          <defs>
+            <linearGradient id="envFace" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="hsl(48,80%,96%)"/>
+              <stop offset="100%" stop-color="hsl(42,55%,86%)"/>
+            </linearGradient>
+            <radialGradient id="envGlow" cx="50%" cy="50%" r="70%">
+              <stop offset="0%" stop-color="hsla(42,95%,82%,0.9)"/>
+              <stop offset="100%" stop-color="hsla(42,95%,82%,0)"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="28" cy="20" rx="34" ry="20" fill="url(#envGlow)"/>
+          <rect x="6" y="8" width="44" height="26" rx="2.5" fill="url(#envFace)" stroke="hsl(38,40%,55%)" stroke-width="0.8"/>
+          <path d="M6 9 L28 24 L50 9" fill="none" stroke="hsl(38,40%,55%)" stroke-width="0.8"/>
+          <circle cx="28" cy="22" r="3" fill="hsl(345,55%,58%)" stroke="hsl(345,38%,40%)" stroke-width="0.5"/>
+          <path d="M27 21.5 L28 23 L30 20.5" fill="none" stroke="hsl(42,90%,90%)" stroke-width="0.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <!-- silken thread between butterfly and envelope -->
+      <div class="bf-thread"></div>
+    </div>
+    <!-- Confirmation card -->
+    <div class="bf-confirm" id="bfConfirm">
+      <p class="bf-confirm-eyebrow">delivered</p>
+      <h3 class="bf-confirm-title">The butterflies have done their job.</h3>
+      <p class="bf-confirm-sub">I'll take it from here.</p>
+      <button class="bf-confirm-close" id="bfConfirmClose" type="button">close</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       EASTER EGG — handwritten thank-you note (Konami code)
+       ═══════════════════════════════════════════════════════ -->
+  <div id="secretNote" class="secret-note" aria-hidden="true">
+    <div class="sn-paper">
+      <p class="sn-handwriting">
+        oh, hello.<br/><br/>
+        if you found this, you're the kind of person<br/>
+        who notices the small things — which is<br/>
+        exactly the kind of person I want to work with.<br/><br/>
+        <span class="sn-sig">— v</span>
+      </p>
+      <button class="sn-close" id="snClose" type="button" aria-label="Close the note">✕</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

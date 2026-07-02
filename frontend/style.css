@@ -1860,12 +1860,17 @@ em { font-style: italic; }
 /* ============================================================
    FOOTER
    ============================================================ */
-.footer {
-  position: relative;
-  background: var(--forest-deep);
-  overflow: hidden;
-  padding: 100px 48px 60px;
-}
+   .footer {
+    position: relative;
+    background: var(--forest-deep);
+    overflow: hidden;
+    padding: 100px 48px 60px;
+  
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+  }
 
 .footer-botanical {
   position: absolute;
